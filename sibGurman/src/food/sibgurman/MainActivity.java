@@ -1,13 +1,16 @@
 package food.sibgurman;
 
 import java.util.ArrayList;
+
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.widget.TextView;
+
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -22,11 +25,9 @@ public class MainActivity extends SherlockFragmentActivity
  	public void onCreate(Bundle savedInstanceState)
  	{
 	 super.onCreate(savedInstanceState);
-	 //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-	 //android:theme="@style/Theme.Sherlock.Light" >
 	 mViewPager = new ViewPager(this);
 	 mViewPager.setId(R.id.pager);
-     
+	 mViewPager.setBackgroundColor(Color.argb(255, 255, 255, 255));
 	 setContentView(mViewPager);
 	 ActionBar bar = getSupportActionBar();
 	 bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
