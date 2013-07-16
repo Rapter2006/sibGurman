@@ -22,18 +22,19 @@ public class MainActivity extends SherlockFragmentActivity
  	public void onCreate(Bundle savedInstanceState)
  	{
 	 super.onCreate(savedInstanceState);
-
+	 //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	 //android:theme="@style/Theme.Sherlock.Light" >
 	 mViewPager = new ViewPager(this);
 	 mViewPager.setId(R.id.pager);
-
+     
 	 setContentView(mViewPager);
 	 ActionBar bar = getSupportActionBar();
 	 bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 	 mTabsAdapter = new TabsAdapter(this, mViewPager);
 
-	 mTabsAdapter.addTab( bar.newTab().setText("Пельмени"), FragmentOne.class, null);
-	 mTabsAdapter.addTab( bar.newTab().setText("Блины"), FragmentTwo.class, null);
+	 mTabsAdapter.addTab(bar.newTab().setText("Пельмени"), FragmentOne.class, null);
+	 mTabsAdapter.addTab(bar.newTab().setText("Блины"), FragmentTwo.class, null);
 	 mTabsAdapter.addTab(bar.newTab().setText("Супы"), FragmentThree.class, null);
 	 
     }

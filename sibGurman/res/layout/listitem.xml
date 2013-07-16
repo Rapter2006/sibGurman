@@ -11,8 +11,8 @@
         
          <ImageView
             android:id="@+id/logo"
-            android:layout_width="300px"
-            android:layout_height="300px"
+            android:layout_width="600px"
+            android:layout_height="600px"
             android:layout_weight="1"
             android:layout_marginTop="5px"
             android:src="@drawable/android_logo"

@@ -17,7 +17,7 @@ public class FragmentThree extends SherlockListFragment{
 @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
    	{
-		listProducts.add(new ItemList("«Элитные»","Свинина, лук, масло, молоко", R.drawable.android_logo));
+		listProducts.add(new ItemList("«Элитные»","Свинина, лук, масло, молоко", R.drawable.));
 		listProducts.add(new ItemList("Манты «Сибирские»", "Свинина, говядина, лук, масло", R.drawable.android_logo));
 		listProducts.add(new ItemList("«Смешарики»", "Свинина, лук, масло, молоко", R.drawable.android_logo));
 		listProducts.add(new ItemList("«Едим дома» Классические", "Cвинина, говядина, масло, мука", R.drawable.android_logo));
