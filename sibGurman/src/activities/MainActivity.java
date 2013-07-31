@@ -1,7 +1,9 @@
-package food.sibgurman;
+package activities;
 
 import java.util.ArrayList;
 
+import net.simonvt.menudrawer.MenuDrawer;
+import net.simonvt.menudrawer.MenuDrawer.OnDrawerStateChangeListener;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,33 +16,66 @@ import android.widget.TextView;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.MenuItem;
+
+import food.sibgurman.R;
 
 public class MainActivity extends SherlockFragmentActivity
 {
-    ViewPager mViewPager;
+	TextView menuView;
+	ViewPager mViewPager;
+    MenuDrawer mDrawer;
     TabsAdapter mTabsAdapter;
+    TextView mContentTextView;
     TextView tabCenter, tabText;
 
  @Override
  	public void onCreate(Bundle savedInstanceState)
  	{
 	 super.onCreate(savedInstanceState);
+	 	 
 	 mViewPager = new ViewPager(this);
 	 mViewPager.setId(R.id.pager);
 	 mViewPager.setBackgroundColor(Color.argb(255, 255, 255, 255));
-	 setContentView(mViewPager);
+	 
+	 mDrawer = MenuDrawer.attach(this);
+     
+     menuView = new TextView(this);
+     menuView.setTextColor(0xFFFFFFFF);
+     menuView.setText("As the drawer opens, the drawer indicator icon becomes smaller.");
+     
+     // The drawable that replaces the up indicator in the action bar
+     mDrawer.setSlideDrawable(R.drawable.ic_drawer);
+     // Whether the previous drawable should be shown
+     mDrawer.setDrawerIndicatorEnabled(true);
+	 
+	 
 	 ActionBar bar = getSupportActionBar();
 	 bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-	 mTabsAdapter = new TabsAdapter(this, mViewPager);
-
+	 mTabsAdapter = new TabsAdapter(this, mViewPager);	 
 	 mTabsAdapter.addTab(bar.newTab().setText("Пельмени"), FragmentOne.class, null);
 	 mTabsAdapter.addTab(bar.newTab().setText("Блины"), FragmentTwo.class, null);
-	 mTabsAdapter.addTab(bar.newTab().setText("Супы"), FragmentThree.class, null);
+	 mTabsAdapter.addTab(bar.newTab().setText("Супы"), FragmentThree.class, null); 
 	 
-    }
+	 mDrawer.setContentView(mViewPager);
+	 mDrawer.setMenuView(menuView);
+     
+ 	}
+ 
 
- 	public static class TabsAdapter extends FragmentPagerAdapter implements
+ @Override
+ public boolean onOptionsItemSelected(MenuItem item) {
+     switch (item.getItemId()) {
+         case android.R.id.home:
+        	 
+        	 mDrawer.toggleMenu();
+             break;
+     }
+
+     return super.onOptionsItemSelected(item);
+ }
+ 
+  	public static class TabsAdapter extends FragmentPagerAdapter implements
  		ActionBar.TabListener, ViewPager.OnPageChangeListener
  	{
  		private final Context mContext;
@@ -128,4 +163,7 @@ public class MainActivity extends SherlockFragmentActivity
   {
   }
  }
+	
+
+	
 }

@@ -1,13 +1,19 @@
-package food.sibgurman;
+package activities;
 
 
 import java.util.ArrayList;
 import java.util.List;
+
+import adapters.MobileArrayAdapter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import classes.ItemList;
+
 import com.actionbarsherlock.app.SherlockListFragment;
+
+import food.sibgurman.R;
 
 public class FragmentThree extends SherlockListFragment{
 	private List<ItemList> listProducts = new ArrayList<ItemList>();
