@@ -10,9 +10,9 @@
         android:weightSum="2" >
         
          <ImageView
-            android:id="@+id/logo"
-            android:layout_width="600px"
-            android:layout_height="600px"
+            android:id="@+id/imageProduct"
+            android:layout_width="100px"
+            android:layout_height="100px"
             android:layout_weight="1"
             android:layout_marginTop="5px"
             android:src="@drawable/android_logo"
@@ -26,22 +26,32 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/label"
+            android:id="@+id/nameProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@+id/label"
+            android:text="name"
             android:textColor="#1d1b13"
             android:textSize="30px" >
         </TextView>
 
         <TextView
-            android:id="@+id/ingredients"
+            android:id="@+id/descriptionProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="description"
+            android:textColor="#1d1b13"
+            android:textSize="30px" >
+        </TextView>
+       
+        <TextView
+            android:id="@+id/storageProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
             android:layout_marginTop="22dp"
             android:layout_weight="0.54"
             android:textColor="#1d1b13"
+            android:text="storage"
             android:textSize="30px" />
 
     </LinearLayout>

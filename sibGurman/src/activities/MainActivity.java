@@ -1,17 +1,26 @@
 package activities;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import net.simonvt.menudrawer.MenuDrawer;
-import net.simonvt.menudrawer.MenuDrawer.OnDrawerStateChangeListener;
+import adapters.MenuAdapter;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
+import classes.AllProducts;
+import classes.ItemMenu;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
@@ -20,15 +29,16 @@ import com.actionbarsherlock.view.MenuItem;
 
 import food.sibgurman.R;
 
+
+
 public class MainActivity extends SherlockFragmentActivity
 {
 	TextView menuView;
-	ViewPager mViewPager;
-    MenuDrawer mDrawer;
+	public static ViewPager mViewPager;
+	public static MenuDrawer mDrawer;
     TabsAdapter mTabsAdapter;
     TextView mContentTextView;
     TextView tabCenter, tabText;
-
  @Override
  	public void onCreate(Bundle savedInstanceState)
  	{
@@ -37,33 +47,53 @@ public class MainActivity extends SherlockFragmentActivity
 	 mViewPager = new ViewPager(this);
 	 mViewPager.setId(R.id.pager);
 	 mViewPager.setBackgroundColor(Color.argb(255, 255, 255, 255));
-	 
+	
 	 mDrawer = MenuDrawer.attach(this);
-     
-     menuView = new TextView(this);
-     menuView.setTextColor(0xFFFFFFFF);
-     menuView.setText("As the drawer opens, the drawer indicator icon becomes smaller.");
-     
-     // The drawable that replaces the up indicator in the action bar
      mDrawer.setSlideDrawable(R.drawable.ic_drawer);
-     // Whether the previous drawable should be shown
      mDrawer.setDrawerIndicatorEnabled(true);
-	 
 	 
 	 ActionBar bar = getSupportActionBar();
 	 bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-	 mTabsAdapter = new TabsAdapter(this, mViewPager);	 
-	 mTabsAdapter.addTab(bar.newTab().setText("Пельмени"), FragmentOne.class, null);
-	 mTabsAdapter.addTab(bar.newTab().setText("Блины"), FragmentTwo.class, null);
-	 mTabsAdapter.addTab(bar.newTab().setText("Супы"), FragmentThree.class, null); 
+	 mTabsAdapter = new TabsAdapter(this, mViewPager);
+	
+	 AllProducts.initAll();
+
+	 mTabsAdapter.addTab(bar.newTab().setText("Пельмени/Хинкали"), Pelmens.class, null);
+	 mTabsAdapter.addTab(bar.newTab().setText("Блины"), Pancakes.class, null);
+	 mTabsAdapter.addTab(bar.newTab().setText("Вареники"), Dumplings.class, null); 
+	 mTabsAdapter.addTab(bar.newTab().setText("Тесто"), Dough.class, null);
+	 mTabsAdapter.addTab(bar.newTab().setText("Супы"), Soups.class, null);
+	 mTabsAdapter.addTab(bar.newTab().setText("Котлеты"), Chops.class, null);
 	 
-	 mDrawer.setContentView(mViewPager);
-	 mDrawer.setMenuView(menuView);
+	 final List<ItemMenu> mainButtons = new ArrayList<ItemMenu>();
+	 ListView modeList = new ListView(this);
+	 
+	 modeList.setId(R.id.listItem);
+	 mainButtons.add(new ItemMenu("Plot", R.drawable.android_logo,
+             new Intent(this, MenuActivity.class)));
+
+     mainButtons.add(new ItemMenu("Calculate", R.drawable.android_logo,
+                new Intent(this, MenuActivity.class)));
      
+     modeList.setAdapter(new MenuAdapter(this, mainButtons));   
+     modeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+     public void onItemClick(AdapterView<?> parent, View view,
+                                     int position, long id)
+             {
+              // Intent intent = new Intent(MainActivity.this, OL.class);
+              // startActivity(intent);
+             }
+         });
+	 
+	mDrawer.setContentView(mViewPager);
+	mDrawer.setMenuView(modeList);
+     //setContentView(mViewPager);
+
  	}
  
 
- @Override
+
+@Override
  public boolean onOptionsItemSelected(MenuItem item) {
      switch (item.getItemId()) {
          case android.R.id.home:
@@ -124,7 +154,7 @@ public class MainActivity extends SherlockFragmentActivity
   @Override
   public Fragment getItem(int position)
   {
-   TabInfo info = mTabs.get(position);
+   TabInfo info = mTabs.get(position); 
    return Fragment.instantiate(mContext, info.clss.getName(),
      info.args);
   }
@@ -163,7 +193,6 @@ public class MainActivity extends SherlockFragmentActivity
   {
   }
  }
-	
+  	
 
-	
 }

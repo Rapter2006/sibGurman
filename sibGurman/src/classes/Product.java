@@ -1,126 +1,36 @@
 package classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Product {
-      private String pictureURL;
-      private double weight; //вес
-      private double protein; //белки
-      private double fat; //жиры
-      private double carbohydrates; //углеводы
-      private double  caloric; //калории
-      private String storage; //как хранить
-      private String packageType; //тип упаковки
-      private String description; //общее описание
-      private String gost; //ТУ или ГОСТ
       
-      private void initProduct(String pictureURL, double weight, double protein,
-    		  double fat, double carbohydrates, double caloric, 
-    		  String storage, String packageType, String gost)
+      private String description; //общее описание
+      private String name; //название
+      private int pictureId; //на картинку
+      private String storage; //срок годности и хранение
+      private List<Package> packs = new ArrayList<Package>(); // все, что касается упаковок
+      
+      private void initProduct(String name, String description, String storage, int pictureId, List<Package> pack)
       {
-    	   this.setPictureURL(pictureURL);
-	       this.setWeight(weight);
-	       this.setProtein(protein);
-	       this.setFat(fat);
-	       this.setCarbohydrates(carbohydrates);
-	       this.setCaloric(caloric);
-	       this.setStorage(storage);
-	       this.setPackageType(packageType);
-	       this.setGost(gost);  
+    	  this.name = name;
+    	  this.storage = storage;
+    	  this.pictureId = pictureId;
+    	  this.description =  description;
+    	  this.setPacks(pack);
       }
       
       
-      Product(String pictureURL, double weight, double protein,
-    		  double fat, double carbohydrates, double caloric, 
-    		  String storage, String packageType, String gost)
+     public Product(String name, String description, String storage, int pictureId, List<Package> pack)
      {
-         initProduct(pictureURL, weight, protein, fat, 
-    	    	carbohydrates, caloric, storage, packageType, gost);
+         initProduct(name, description, storage, pictureId, pack);
      }
       
-     Product()
+     public Product()
      {
-    	 initProduct("", 0, 0, 0, 0, 0, "", "пенал", "");
+         packs.add(new Package(0, 0, ""));
+    	 initProduct("", "", "", 1, packs);
      }
-
-
-	public String getPictureURL() {
-		return pictureURL;
-	}
-
-
-	public void setPictureURL(String pictureURL) {
-		this.pictureURL = pictureURL;
-	}
-
-
-	public double getWeight() {
-		return weight;
-	}
-
-
-	public void setWeight(double weight) {
-		this.weight = weight;
-	}
-
-
-	public double getProtein() {
-		return protein;
-	}
-
-
-	public void setProtein(double protein) {
-		this.protein = protein;
-	}
-
-
-	public double getFat() {
-		return fat;
-	}
-
-
-	public void setFat(double fat) {
-		this.fat = fat;
-	}
-
-
-	public double getCarbohydrates() {
-		return carbohydrates;
-	}
-
-
-	public void setCarbohydrates(double carbohydrates) {
-		this.carbohydrates = carbohydrates;
-	}
-
-
-	public double getCaloric() {
-		return caloric;
-	}
-
-
-	public void setCaloric(double caloric) {
-		this.caloric = caloric;
-	}
-
-
-	public String getStorage() {
-		return storage;
-	}
-
-
-	public void setStorage(String storage) {
-		this.storage = storage;
-	}
-
-
-	public String getPackageType() {
-		return packageType;
-	}
-
-
-	public void setPackageType(String packageType) {
-		this.packageType = packageType;
-	}
-
 
 	public String getDescription() {
 		return description;
@@ -131,14 +41,43 @@ public class Product {
 		this.description = description;
 	}
 
-
-	public String getGost() {
-		return gost;
+	public String getName() {
+		return name;
 	}
 
 
-	public void setGost(String gost) {
-		this.gost = gost;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public int getPictureId() {
+		return this.pictureId;
+	}
+
+
+	public void setPictureId(int pictureId) {
+		this.pictureId = pictureId;
+	}
+
+
+	public List<Package> getPacks() {
+		return packs;
+	}
+
+
+	public void setPacks(List<Package> packs) {
+		this.packs = packs;
+	}
+
+
+	public String getStorage() {
+		return storage;
+	}
+
+
+	public void setStorage(String storage) {
+		this.storage = storage;
 	}
      
 }      
