@@ -1,7 +1,9 @@
 package adapters;
 
 import java.util.List;
+
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,10 +36,43 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         ImageView imageView = (ImageView) rowView.findViewById(R.id.imageProduct);
         
         textViewNameProduct.setText(items.get(position).getName());
+        Log.d("OLOLO",items.get(position).getDescription());
         textViewDescriptionProduct.setText(items.get(position).getDescription());
         textViewStorageProduct.setText(items.get(position).getStorage());
         imageView.setImageResource(items.get(position).getPictureId());
 
+        TextView firstNumber = (TextView) rowView.findViewById(R.id.numberOne);
+        firstNumber.setText(Integer.toString(items.get(position).getPacks().get(0).getNumber())+ " ");
+        
+        TextView firstWeight = (TextView) rowView.findViewById(R.id.weightOne);
+        firstWeight.setText(Double.toString(items.get(position).getPacks().get(0).getWeight())+ " ");
+        
+        TextView firstType = (TextView) rowView.findViewById(R.id.typeOne);
+        firstType.setText(items.get(position).getPacks().get(0).getPackageType()+ " ");
+        
+        try{
+
+            TextView secondNumber = (TextView) rowView.findViewById(R.id.numberTwo);
+            secondNumber.setText(Integer.toString(items.get(position).getPacks().get(1).getNumber())+ " ");
+            
+            TextView secondWeight = (TextView) rowView.findViewById(R.id.weightTwo);
+            secondWeight.setText(Double.toString(items.get(position).getPacks().get(1).getWeight())+ " ");
+            
+            TextView secondType = (TextView) rowView.findViewById(R.id.typeTwo);
+            secondType.setText(items.get(position).getPacks().get(1).getPackageType()+ " ");      	
+        
+            TextView thirdNumber = (TextView) rowView.findViewById(R.id.numberThree);
+            thirdNumber.setText(Integer.toString(items.get(position).getPacks().get(2).getNumber())+ " ");
+            
+            TextView thirdWeight = (TextView) rowView.findViewById(R.id.weightThree);
+            thirdWeight.setText(Double.toString(items.get(position).getPacks().get(2).getWeight())+ " ");
+            
+            TextView thirdType = (TextView) rowView.findViewById(R.id.typeThree);
+            thirdType.setText(items.get(position).getPacks().get(2).getPackageType()+ " ");
+        }
+        catch(Exception e)
+        {}
+        
         return rowView;
     }
 }

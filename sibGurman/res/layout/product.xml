@@ -1,61 +1,225 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:layout_marginTop="5px"
     android:orientation="vertical" >
+    <TextView
+             android:id="@+id/nameProduct"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:contentDescription="27px"
+             android:text="name"
+             android:textColor="#1d1b13"
+             android:textSize="42px"
+             android:typeface="sans" >
 
-    <TableRow
-        android:id="@+id/tableRow1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2" >
+        </TextView>
+
+   <TableRow
+       android:id="@+id/tableRowMain"
+       android:layout_width="wrap_content"
+       android:layout_height="fill_parent"
+       android:layout_marginLeft="10px"
+       android:layout_marginTop="10px"
+       android:weightSum="7" >
+        
+        <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_weight="1"
+         android:orientation="vertical" >
         
          <ImageView
             android:id="@+id/imageProduct"
-            android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_width="550px"
+            android:layout_height="550px"
             android:layout_weight="1"
-            android:layout_marginTop="5px"
+            android:layout_gravity="bottom"
             android:src="@drawable/android_logo"
             android:adjustViewBounds="false">
         </ImageView>
+    </LinearLayout>
 
-    <LinearLayout
+      
+    
+   <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="5"
+        android:layout_gravity="center"
         android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/nameProduct"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="name"
-            android:textColor="#1d1b13"
-            android:textSize="30px" >
-        </TextView>
-
+      
         <TextView
             android:id="@+id/descriptionProduct"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="description"
+            android:layout_gravity="center"
             android:textColor="#1d1b13"
             android:textSize="30px" >
+
         </TextView>
        
         <TextView
             android:id="@+id/storageProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="22dp"
-            android:layout_weight="0.54"
             android:textColor="#1d1b13"
-            android:text="storage"
-            android:textSize="30px" />
+            android:textSize="30px"
+            android:layout_gravity="center"
+            android:text="storage"/>
+         <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_marginTop="10px"
+            android:layout_gravity="center"
+            android:layout_height="fill_parent" 
+            android:id="@+id/tableProduct">   
+              <TableRow
+       			android:id="@+id/tableRow1"
+       			android:layout_width="match_parent"
+       			android:weightSum="3"
+       			android:gravity="center"
+       			android:layout_height="wrap_content" > 
+               
+                 <TextView
+		            android:id="@+id/number"
+		            android:layout_weight="1"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:text="Число в упаковке"
+		            android:textColor="#1d1b13"
+		            android:textSize="30px" >
+		            </TextView>
+		        
+                 <TextView
+		            android:id="@+id/weight"
+		            android:layout_weight="1"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:text="Вес"
+		            android:textColor="#1d1b13"
+		            android:textSize="30px" >
+		            </TextView>
+		            
+		         <TextView
+		            android:id="@+id/type"
+		            android:layout_weight="1"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:text="Тип упаковки"
+		            android:textColor="#1d1b13"
+		            android:textSize="30px" >    
+		            </TextView>
+		             
+              </TableRow>
+               <TableRow
+       			android:id="@+id/tableRow2"
+       			android:layout_weight="3"
+       			android:layout_width="match_parent"
+       			android:layout_height="wrap_content" >
+		        
+                  <TextView
+		            android:id="@+id/numberOne"
+		            android:layout_weight="1"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:text="Число в упаковке "
+		            android:textColor="#1d1b13"
+		            android:textSize="30px" >
+		            </TextView>
+                 <TextView
+		            android:id="@+id/weightOne"
+		            android:layout_weight="1"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:text="Вес "
+		            android:textColor="#1d1b13"
+		            android:textSize="30px" >
+		            </TextView>
+		         <TextView
+		            android:id="@+id/typeOne"
+		            android:layout_weight="1"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:text="Тип упаковки "
+		            android:textColor="#1d1b13"
+		            android:textSize="30px" >    
+		            </TextView>   
+                   
+              </TableRow>
+              <TableRow
+       			android:id="@+id/tableRow3"
+       			android:layout_weight="3"
+       			android:layout_width="fill_parent"
+       			android:layout_height="fill_parent" >
+		         
+                  <TextView
+		            android:id="@+id/numberTwo"
+		            android:layout_weight="1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		          
+		            android:textColor="#1d1b13"
+		            android:textSize="32px" >
+		            </TextView>
+                 <TextView
+		            android:id="@+id/weightTwo"
+		            android:layout_weight="1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		      
+		            android:textColor="#1d1b13"
+		            android:textSize="32px" >
+		            </TextView>
+		         <TextView
+		            android:id="@+id/typeTwo"
+		            android:layout_weight="1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		         
+		            android:textColor="#1d1b13"
+		            android:textSize="32px" >    
+		            </TextView>  
+              </TableRow>
+               <TableRow
+       			android:id="@+id/tableRow4"
+       			android:layout_weight="3"
+       			android:layout_width="fill_parent"
+       			android:layout_height="wrap_content" >
+		         
+                  <TextView
+		            android:id="@+id/numberThree"
+		            android:layout_weight="1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		           
+		            android:textColor="#1d1b13"
+		            android:textSize="30px" >
+		            </TextView>
+                 <TextView
+		            android:id="@+id/weightThree"
+		            android:layout_weight="1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
 
+		            android:textColor="#1d1b13"
+		            android:textSize="30px" >
+		            </TextView>
+		         <TextView
+		            android:id="@+id/typeThree"
+		            android:layout_weight="1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		     
+		            android:textColor="#1d1b13"
+		            android:textSize="30px" >    
+		            </TextView>
+              </TableRow>
+        </TableLayout>
     </LinearLayout>
-        
-    </TableRow>
+     </TableRow>
+
+ 
     
 </LinearLayout>
