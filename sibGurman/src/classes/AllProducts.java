@@ -239,7 +239,7 @@ public class AllProducts {
 	    listPackage.add(new Package(22, 0.5, "пакет"));
 	    listProduct.add(new Product("Великосочные", "Сохраняют бульон внутри", stor, R.drawable.avelikosoh, listPackage));
         listPackage = new ArrayList<Package>();
-        listPackage.add(new Package(22, 0.5, "пакет"));
+        listPackage.add(new Package(6, 1, "пакет"));
         listProduct.add(new Product("Сытные", "Пельмени с сочным домашним фаршем", stor, R.drawable.asytn, listPackage));
         listPackage = new ArrayList<Package>();
         listPackage.add(new Package(8, 1, "пакет"));
@@ -249,7 +249,7 @@ public class AllProducts {
         listProduct = new ArrayList<Product>();
         //ЕДИМ ДОМА
         listPackage.add(new Package(10, 0.9, "Пакет с клипсой"));
-        listProduct.add(new Product("Едим Дома", "Пельмени такие, какими они должны быть: "
+        listProduct.add(new Product("Едим Дома классические", "Пельмени такие, какими они должны быть: "
         		+ "тонкое нежное тесто с традиционной сочной мясной начинкой из свинины, говядины,"
         		+ " лука и перца." + "Пельмени обычного размера 10 гр. В пельменях много начинки: "
         		+ "55% фарша и 45% теста", stor, R.drawable.edimdoma, listPackage));
@@ -310,8 +310,8 @@ public class AllProducts {
 	    listProduct.add(new Product("Манты", "Традиционный продукт уйгурской кухни", stor, 
 	    		R.drawable.amanty, listPackage));
 	    listPackage = new ArrayList<Package>();
-	    listPackage.add(new Package(10, 0.95, "Пакет"));
-	    listPackage.add(new Package(12, 0.45, "Пакет"));
+	    listPackage.add(new Package(10, 0.45, "Пакет"));
+	    listPackage.add(new Package(12, 0.95, "Пакет"));
 	    listProduct.add(new Product("Пельмени Для любимых  мужчин", "Сытный и питательный продукт. "
 	    		+ "Состав начинки: 70% свинины, 30% говядины.", stor, R.drawable.amuz, listPackage));
 	    listPackage = new ArrayList<Package>();
@@ -333,7 +333,7 @@ public class AllProducts {
 	    		+ " предпочитают пельмени без свинины. ", stor, R.drawable.vostoch, listPackage));
 	    listPackage = new ArrayList<Package>();
 	    listPackage.add(new Package(10, 0.42, "Пакет"));
-	    listPackage.add(new Package(12, 0.42, "Пакет"));
+	    listPackage.add(new Package(12, 0.9, "Пакет"));
 	    listProduct.add(new Product("Вкусный ужин", "Оптимальный продукт, сочетающий в себе высокую "
 	    		+ "сытность и доступную стоимость.", stor, R.drawable.avkus, listPackage));
 	    listPackage = new ArrayList<Package>();
