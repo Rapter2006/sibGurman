@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import classes.Brand;
-import food.sibgurman.R;
+import sequenia.sibgurman.R;
 
 public class BrandAdapter extends ArrayAdapter<Brand> {
     private final Context context;

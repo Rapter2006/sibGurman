@@ -3,7 +3,7 @@ package classes;
 import java.util.ArrayList;
 import java.util.List;
 
-import food.sibgurman.R;
+import sequenia.sibgurman.R;
 
 public class AllProducts {
 	public static List<Brand> pelmens;

@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import classes.Product;
-import food.sibgurman.R;
+import sequenia.sibgurman.R;
 
 public class ProductAdapter extends ArrayAdapter<Product> {
     private final Context context;

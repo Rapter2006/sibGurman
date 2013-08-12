@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import classes.ItemList;
-import food.sibgurman.R;
+import sequenia.sibgurman.R;
 
 public class MobileArrayAdapter extends ArrayAdapter<ItemList> {
     private final Context context;

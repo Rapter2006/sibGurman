@@ -19,8 +19,7 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.MenuItem;
 import com.bugsense.trace.BugSenseHandler;
 import com.bugsense.trace.ExceptionCallback;
-
-import food.sibgurman.R;
+import sequenia.sibgurman.R;
 
 
 public class MainActivity extends SherlockFragmentActivity implements ExceptionCallback

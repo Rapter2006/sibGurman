@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import food.sibgurman.R;
+import sequenia.sibgurman.R;
 
 
 //Класс - адаптер для ItemMenu
