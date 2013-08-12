@@ -1,7 +1,6 @@
 package activities;
 
 import java.util.ArrayList;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,16 +13,17 @@ import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.TextView;
 import classes.AllProducts;
-
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.MenuItem;
+import com.bugsense.trace.BugSenseHandler;
+import com.bugsense.trace.ExceptionCallback;
 
 import food.sibgurman.R;
 
 
-public class MainActivity extends SherlockFragmentActivity
+public class MainActivity extends SherlockFragmentActivity implements ExceptionCallback
 {
 	TextView menuView;
 	public static int pusitionItem;
@@ -38,6 +38,9 @@ public class MainActivity extends SherlockFragmentActivity
  	public void onCreate(Bundle savedInstanceState)
  	{
 	 super.onCreate(savedInstanceState);
+	 
+	 BugSenseHandler.initAndStartSession(MainActivity.this, "86f7797a");
+	 
 	 getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 	            WindowManager.LayoutParams.FLAG_FULLSCREEN);	 
 	 mViewPager = new ViewPager(this);
@@ -51,13 +54,13 @@ public class MainActivity extends SherlockFragmentActivity
 	
 	 AllProducts.initAll();
 
-	 mTabsAdapter.addTab(bar.newTab().setText("Пельмени/Хинкали"), Pelmens.class, null);
+	 mTabsAdapter.addTab(bar.newTab().setText("Пельмени/Хинкали/Манты"), Pelmens.class, null);
 	 mTabsAdapter.addTab(bar.newTab().setText("Блины"), Pancakes.class, null);
      mTabsAdapter.addTab(bar.newTab().setText("Вареники"), Dumplings.class, null); 
 	 mTabsAdapter.addTab(bar.newTab().setText("Тесто"), Dough.class, null);
 	 mTabsAdapter.addTab(bar.newTab().setText("Супы"), Soups.class, null);
 	 mTabsAdapter.addTab(bar.newTab().setText("Котлеты"), Chops.class, null);
-
+	 
 	 setContentView(mViewPager);
 	}
  
@@ -175,5 +178,10 @@ public class MainActivity extends SherlockFragmentActivity
 	  if (ls != null) MainActivity.ls.setVisibility(View.VISIBLE);
   	               
   }
+
+@Override
+public void lastBreath(Exception exeption) {
+	BugSenseHandler.sendException(exeption);
+}
 
 }

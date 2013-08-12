@@ -14,59 +14,53 @@
              android:textSize="42px"
              android:typeface="sans" >
 
-        </TextView>
+  </TextView>
 
    <TableRow
        android:id="@+id/tableRowMain"
        android:layout_width="wrap_content"
        android:layout_height="fill_parent"
+       android:layout_weight="10"
        android:layout_marginLeft="10px"
-       android:layout_marginTop="10px"
-       android:weightSum="7" >
+       android:layout_marginTop="10px">
         
-        <LinearLayout
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_weight="1"
-         android:orientation="vertical" >
-        
-         <ImageView
+        <ImageView
             android:id="@+id/imageProduct"
             android:layout_width="550px"
+             android:layout_weight="3"
             android:layout_height="550px"
-            android:layout_weight="1"
             android:layout_gravity="bottom"
             android:src="@drawable/android_logo"
             android:adjustViewBounds="false">
         </ImageView>
-    </LinearLayout>
-
       
     
    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="5"
+        android:layout_weight="7"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"
         android:layout_gravity="center"
         android:orientation="vertical" >
       
         <TextView
             android:id="@+id/descriptionProduct"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:text="description"
             android:layout_gravity="center"
             android:textColor="#1d1b13"
             android:textSize="30px" >
-
         </TextView>
        
         <TextView
             android:id="@+id/storageProduct"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:textColor="#1d1b13"
             android:textSize="30px"
+            android:layout_marginTop="10px"
             android:layout_gravity="center"
             android:text="storage"/>
          <TableLayout
