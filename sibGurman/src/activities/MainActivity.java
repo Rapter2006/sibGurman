@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import classes.AllProducts;
@@ -86,6 +87,8 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 	    final Dialog dialog = new Dialog(this);
 		dialog.setContentView(R.layout.dialog);
 		dialog.setTitle("О программе");
+		ImageView image = (ImageView) dialog.findViewById(R.id.gurman);
+		image.setImageResource(R.drawable.gurman_logo);
 		TextView text = (TextView) dialog.findViewById(R.id.text);
 		text.setText(" Каталог продукции компании \"Сибирский Гурман\" \n\n Версия 1.0 \n\n Создано "
 				+ "компанией \"Секвения\" ");
