@@ -3,6 +3,7 @@
 
     <string name="app_name">sib-gurman</string>
     <string name="action_settings">Settings</string>
+    <string name="sequenia">О программе</string>
     <string name="hello_world">Hello world!</string>
      <string name="sample_content">Sample of dragging the content.\nThe menu consists of a ListView, for which the
         active position is saved through configuration changes.\nAdditionally, if the menu is open, a back press will

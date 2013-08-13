@@ -1,6 +1,9 @@
 package activities;
 
 import java.util.ArrayList;
+
+import sequenia.sibgurman.R;
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,13 +16,14 @@ import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.TextView;
 import classes.AllProducts;
+
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
 import com.bugsense.trace.BugSenseHandler;
 import com.bugsense.trace.ExceptionCallback;
-import sequenia.sibgurman.R;
 
 
 public class MainActivity extends SherlockFragmentActivity implements ExceptionCallback
@@ -30,6 +34,7 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 	public static ListView ls; // отвечает за продукты
 	public static ListView lv; //отвечает за бренды
 	ViewPager mViewPager;
+	
     TabsAdapter mTabsAdapter;
     TextView mContentTextView;
     TextView tabCenter, tabText;
@@ -39,6 +44,10 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 	 super.onCreate(savedInstanceState);
 	 
 	 BugSenseHandler.initAndStartSession(MainActivity.this, "86f7797a");
+	 
+	 getSupportActionBar().setIcon(R.drawable.gurman_logo);
+	 getSupportActionBar().setTitle("");
+	 
 	 
 	 getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 	            WindowManager.LayoutParams.FLAG_FULLSCREEN);	 
@@ -63,18 +72,26 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 	 setContentView(mViewPager);
 	}
  
+ @Override
+ public boolean onCreateOptionsMenu(Menu menu) {
 
-
-@Override
- public boolean onOptionsItemSelected(MenuItem item) {
-     switch (item.getItemId()) {
-         case android.R.id.home:
-        	 
-//        	 mDrawer.toggleMenu();
-             break;
-     }
-
-     return super.onOptionsItemSelected(item);
+	 MenuInflater inflater = getSupportMenuInflater();
+	    inflater.inflate(R.menu.main, menu);
+	    return super.onCreateOptionsMenu(menu);
+ }
+ 
+ @Override
+ public boolean onOptionsItemSelected(
+         com.actionbarsherlock.view.MenuItem item) {
+	    final Dialog dialog = new Dialog(this);
+		dialog.setContentView(R.layout.dialog);
+		dialog.setTitle("О программе");
+		TextView text = (TextView) dialog.findViewById(R.id.text);
+		text.setText(" Каталог продукции компании \"Сибирский Гурман\" \n\n Версия 1.0 \n\n Создано "
+				+ "компанией \"Секвения\" ");
+		
+		dialog.show();
+        return false;
  }
  
   public static class TabsAdapter extends FragmentPagerAdapter implements
@@ -182,5 +199,4 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 public void lastBreath(Exception exeption) {
 	BugSenseHandler.sendException(exeption);
 }
-
 }
