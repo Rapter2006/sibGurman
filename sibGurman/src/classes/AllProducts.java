@@ -221,9 +221,10 @@ public class AllProducts {
         listProduct = new ArrayList<Product>();
         //БЛИНЫ(БЕЗ НАЧИНКИ)
         listPackage.add(new Package(12, 0.42, "Лоток"));
-	    listProduct.add(new Product("Солнцепек без начинки", "Пышный и нежный блинный лист.", stor,
+	    listProduct.add(new Product("Солнцепек без начинки", "Пышный и нежный блинный лист.                "
+	    		+ "     ", stor,
 	    		R.drawable.awihothout, listPackage));
-        listPackage = new ArrayList<Package>();
+        listPackage = new ArrayList<Package>();    
         pancakes.add(new Brand("Солнцепек (без начинки)", listProduct));
 	}
 	
@@ -262,7 +263,7 @@ public class AllProducts {
 	    listProduct = new ArrayList<Product>();
 	    //CМЕШАРИКИ
 	    listPackage.add(new Package(10, 0.8, "Коробка"));
-        listProduct.add(new Product("Смешарики", "Вкусные и полезные мини пельмени для детей и "
+        listProduct.add(new Product("Смешарики", "Вкусные и полезные мини-пельмени для детей и "
         		+ "взрослых. Пельмени состоят из натуральных ингредиентов с добавлением морской соли.",
         		stor, R.drawable.smesh, listPackage));
         listPackage = new ArrayList<Package>();
@@ -296,7 +297,7 @@ public class AllProducts {
 	    		R.drawable.soch, listPackage));
 	    listPackage = new ArrayList<Package>();
 	    listPackage.add(new Package(6, 0.9, "Пакет"));
-	    listProduct.add(new Product("Мясная Ярмарка Поварята", "Мини пельмени на основе свинины и говядины", stor, 
+	    listProduct.add(new Product("Мясная Ярмарка Поварята", "Мини-пельмени на основе свинины и говядины", stor, 
 	    		R.drawable.povar, listPackage));
 	    listPackage = new ArrayList<Package>();
 	    pelmens.add(new Brand("Мясная ярмарка", listProduct));
