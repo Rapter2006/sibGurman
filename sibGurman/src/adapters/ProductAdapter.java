@@ -2,8 +2,8 @@ package adapters;
 
 import java.util.List;
 
+import sequenia.sibgurman.R;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import classes.Product;
-import sequenia.sibgurman.R;
 
 public class ProductAdapter extends ArrayAdapter<Product> {
     private final Context context;
@@ -27,16 +26,17 @@ public class ProductAdapter extends ArrayAdapter<Product> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        View rowView = inflater.inflate(R.layout.product, parent, false);
-
+        
+        View rowView; 
+        if (convertView != null) rowView = convertView;
+        else rowView = inflater.inflate(R.layout.product, parent, false);
+        
         TextView textViewNameProduct = (TextView) rowView.findViewById(R.id.nameProduct);
         TextView textViewDescriptionProduct = (TextView) rowView.findViewById(R.id.descriptionProduct);
         TextView textViewStorageProduct = (TextView) rowView.findViewById(R.id.storageProduct);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.imageProduct);
         
         textViewNameProduct.setText(items.get(position).getName());
-        Log.d("OLOLO",items.get(position).getDescription());
         textViewDescriptionProduct.setText(items.get(position).getDescription());
         textViewStorageProduct.setText(items.get(position).getStorage());
         imageView.setImageResource(items.get(position).getPictureId());
