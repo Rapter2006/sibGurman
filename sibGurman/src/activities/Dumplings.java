@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import classes.AllProducts;
+import classes.Transporter;
 
 import com.actionbarsherlock.app.SherlockListFragment;
 
@@ -35,6 +36,7 @@ public class Dumplings extends SherlockListFragment{
 	    	   FragmentTransaction fTrans = getFragmentManager().beginTransaction();
                Fragment frag1 = new ProductFragment();
                MainActivity.className = 6;
+               Transporter.positionBrand = position;
                MainActivity.pusitionItem = position;
                MainActivity.ls = Dumplings.this.getListView();
                MainActivity.ls.setVisibility(View.INVISIBLE);

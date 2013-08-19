@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import classes.AllProducts;
+import classes.Transporter;
+
 import com.actionbarsherlock.app.SherlockListFragment;
 
 
@@ -34,6 +36,7 @@ public class Soups extends SherlockListFragment{
 	     	{	
 	    	   FragmentTransaction fTrans = getFragmentManager().beginTransaction();
                Fragment frag1 = new ProductFragment();
+               Transporter.positionBrand = position;
                MainActivity.className = 4;
                MainActivity.pusitionItem = position;
                MainActivity.ls = Soups.this.getListView();

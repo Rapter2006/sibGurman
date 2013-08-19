@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import classes.Brand;
 import sequenia.sibgurman.R;
@@ -29,8 +30,10 @@ public class BrandAdapter extends ArrayAdapter<Brand> {
         View rowView = inflater.inflate(R.layout.brand, parent, false);
 
         TextView nameBrand = (TextView) rowView.findViewById(R.id.nameBrand);
+        ImageView imageView = (ImageView) rowView.findViewById(R.id.pictureBrand);
         
         nameBrand.setText(items.get(position).getNameBrand());
+        imageView.setImageResource(items.get(position).getPictureId());
         
         return rowView;
     }

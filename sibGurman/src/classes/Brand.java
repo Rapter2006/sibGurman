@@ -6,7 +6,8 @@ import java.util.List;
 public class Brand //бренд
 {
 	private List<Product> products = new ArrayList<Product>();
-	private String nameBrand;
+	private String nameBrand; //имя бренда
+	private int pictureId; //на картинку
 	
 	public Brand(){
 		products = new ArrayList<Product>();
@@ -16,7 +17,6 @@ public class Brand //бренд
 		this.nameBrand = name;
 		this.products = products;
 	}
-	
 	
 	int getProductsLength()
 	{
@@ -42,6 +42,12 @@ public class Brand //бренд
 
 	public void setNameBrand(String nameBrand) {
 		this.nameBrand = nameBrand;
+	}
+	public int getPictureId() {
+		return pictureId;
+	}
+	public void setPictureId(int pictureId) {
+		this.pictureId = pictureId;
 	}
 	
 }

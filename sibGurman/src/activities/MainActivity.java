@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import sequenia.sibgurman.R;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -94,7 +95,7 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 				+ "компанией \"Секвения\" ");
 		
 		dialog.show();
-        return false;
+		return false;
  }
  
   public static class TabsAdapter extends FragmentPagerAdapter implements

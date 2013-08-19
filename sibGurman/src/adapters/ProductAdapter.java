@@ -2,8 +2,8 @@ package adapters;
 
 import java.util.List;
 
+import sequenia.sibgurman.R;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import classes.Product;
-import sequenia.sibgurman.R;
 
 public class ProductAdapter extends ArrayAdapter<Product> {
     private final Context context;
@@ -36,7 +35,7 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         ImageView imageView = (ImageView) rowView.findViewById(R.id.imageProduct);
         
         textViewNameProduct.setText(items.get(position).getName());
-        Log.d("OLOLO",items.get(position).getDescription());
+
         textViewDescriptionProduct.setText(items.get(position).getDescription());
         textViewStorageProduct.setText(items.get(position).getStorage());
         imageView.setImageResource(items.get(position).getPictureId());
