@@ -26,9 +26,10 @@ import com.actionbarsherlock.app.SherlockFragment;
 public class ProductFragment extends Activity {
 	List<ForRow> list = new ArrayList<ForRow>();
   public void onCreate(Bundle savedInstanceState) {
+	  super.onCreate(savedInstanceState);
 	   setContentView(R.layout.main_list);
 	 //View v = inflater.inflate(R.layout.main_list, null);
-	/*  TableLayout table = (TableLayout)findViewById(R.id.table);
+	 TableLayout table = (TableLayout)findViewById(R.id.table);
 	  table.setStretchAllColumns(true);
 	  TableRow row = new TableRow(this);
 	 
@@ -237,7 +238,7 @@ public class ProductFragment extends Activity {
 		               }
 	  }
 	 
- */
+// */
   }
  
  
