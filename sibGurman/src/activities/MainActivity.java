@@ -26,6 +26,7 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.bugsense.trace.BugSenseHandler;
 import com.bugsense.trace.ExceptionCallback;
+import com.devsmart.android.ui.HorizontalListView;
 
 
 public class MainActivity extends SherlockFragmentActivity implements ExceptionCallback
@@ -35,6 +36,7 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 	public static int className;
 	public static ListView ls; // отвечает за продукты
 	public static ListView lv; //отвечает за бренды
+	public static ListView mainListView; //отвечает за отображение продуктов поименно
 	ViewPager mViewPager;
 	
     TabsAdapter mTabsAdapter;
@@ -172,10 +174,12 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
   if (ls != null)
 	   MainActivity.ls.setVisibility(View.VISIBLE);
   if (lv != null)
-	  MainActivity.lv.setVisibility(View.INVISIBLE);	  
+	  MainActivity.lv.setVisibility(View.INVISIBLE);
+  if (mainListView != null)
+	  MainActivity.mainListView.setVisibility(View.INVISIBLE);
    Object tag = tab.getTag();
    for (int i = 0; i < mTabs.size(); i++)
-   {
+   { 
     if (mTabs.get(i) == tag)
     {
      mViewPager.setCurrentItem(i);
@@ -196,6 +200,7 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 	  super.onBackPressed();
 	  if (lv != null) MainActivity.lv.setVisibility(View.INVISIBLE);	
 	  if (ls != null) MainActivity.ls.setVisibility(View.VISIBLE);
+	  if (mainListView != null) MainActivity.mainListView.setVisibility(View.INVISIBLE);
   	               
   }
 

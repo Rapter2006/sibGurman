@@ -2,6 +2,7 @@ package activities;
 
 
 import adapters.BrandAdapter;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -21,7 +22,7 @@ public class Chops extends SherlockListFragment{
    	{    
 	    BrandAdapter adapter = new BrandAdapter(getActivity().getBaseContext(), AllProducts.chops);
 	    setListAdapter(adapter); 
-	  
+	   
 	    return super.onCreateView(inflater, container, savedInstanceState);		
 	}
 
@@ -35,15 +36,18 @@ public class Chops extends SherlockListFragment{
 	     public void onItemClick(AdapterView<?> parent, View view,
                  int position, long id)
 	     	{	
-	    	   FragmentTransaction fTrans = getFragmentManager().beginTransaction();
-               Fragment frag1 = new ProductFragment();
+//	    	   FragmentTransaction fTrans = getFragmentManager().beginTransaction();
+//               Fragment frag1 = new ProductFragment();
                MainActivity.className = 5;
                Transporter.positionBrand = position;
                MainActivity.pusitionItem = position;
                MainActivity.ls = Chops.this.getListView();
+               
                MainActivity.ls.setVisibility(View.INVISIBLE);
-               fTrans.replace(android.R.id.content, frag1).addToBackStack(null);
-               fTrans.commit();
+               Intent intent = new Intent(getActivity(), ProductFragment.class);
+               startActivity(intent); 
+               //               fTrans.replace(android.R.id.content, frag1).addToBackStack(null);
+//               fTrans.commit();
 	     	}
 	     
 		});
