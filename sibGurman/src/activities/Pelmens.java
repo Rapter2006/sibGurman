@@ -42,8 +42,8 @@ public class Pelmens extends SherlockListFragment{
                MainActivity.pusitionItem = position;
                if (MainActivity.lv != null)
             	   MainActivity.lv.setVisibility(View.VISIBLE);
-               MainActivity.ls = Pelmens.this.getListView();
-               MainActivity.ls.setVisibility(View.INVISIBLE);
+            //   MainActivity.ls = Pelmens.this.getListView();
+             //  MainActivity.ls.setVisibility(View.INVISIBLE);
                Intent intent = new Intent(getActivity(), ProductFragment.class);
                startActivity(intent);
                //if (MainActivity.mainListView != null) MainActivity.mainListView.setVisibility(View.VISIBLE);

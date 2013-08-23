@@ -42,7 +42,7 @@ public class Pancakes extends SherlockListFragment{
                MainActivity.pusitionItem = position;
                MainActivity.ls = Pancakes.this.getListView();
                
-               MainActivity.ls.setVisibility(View.INVISIBLE);
+            //  MainActivity.ls.setVisibility(View.INVISIBLE);
 //               fTrans.replace(android.R.id.content, frag1).addToBackStack(null);
 //               fTrans.commit();
                Intent intent = new Intent(getActivity(), ProductFragment.class);

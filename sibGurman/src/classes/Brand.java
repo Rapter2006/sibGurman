@@ -3,6 +3,8 @@ package classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import sequenia.sibgurman.R;
+
 public class Brand //бренд
 {
 	private List<Product> products = new ArrayList<Product>();
@@ -12,9 +14,17 @@ public class Brand //бренд
 	public Brand(){
 		products = new ArrayList<Product>();
 	}
+	public Brand(String name, int pictureId, List<Product> products)
+	{
+		this.nameBrand = name;
+		this.pictureId = pictureId;
+		this.products = products;
+	}
+	
 	public Brand(String name, List<Product> products)
 	{
 		this.nameBrand = name;
+		this.pictureId = R.drawable.nobrand;
 		this.products = products;
 	}
 	

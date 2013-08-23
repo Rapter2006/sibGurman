@@ -42,7 +42,7 @@ public class Dough extends SherlockListFragment{
                MainActivity.pusitionItem = position;
                MainActivity.ls = Dough.this.getListView();
                
-               MainActivity.ls.setVisibility(View.INVISIBLE);
+            //  MainActivity.ls.setVisibility(View.INVISIBLE);
                Intent intent = new Intent(getActivity(), ProductFragment.class);
                startActivity(intent);
                //fTrans.replace(android.R.id.content, frag1).addToBackStack(null);
