@@ -330,7 +330,7 @@ public class AllProducts {
 	    listPackage = new ArrayList<Package>();
 	    listPackage.add(new Package(10, 0.45, "Пакет"));
 	    listPackage.add(new Package(12, 0.95, "Пакет"));
-	    listProduct.add(new Product("Пельмени Для любимых  мужчин", "Сытный и питательный продукт. "
+	    listProduct.add(new Product("Для любимых  мужчин", "Сытный и питательный продукт. "
 	    		+ "Состав начинки: 70% свинины, 30% говядины.", stor, R.drawable.amuz, listPackage));
 	    listPackage = new ArrayList<Package>();
 	    listPackage.add(new Package(12, 0.95, "Пакет"));

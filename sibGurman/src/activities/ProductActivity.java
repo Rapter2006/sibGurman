@@ -2,21 +2,17 @@ package activities;
 
 import sequenia.sibgurman.R;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import classes.AllProducts;
 import classes.Product;
 import classes.Transporter;
-
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 
 public class ProductActivity extends SherlockFragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);  
-        Log.d("positionBrand", Integer.toString(Transporter.positionBrand));
-        Log.d("positionBrand", Integer.toString(Transporter.positionProduct));
         Product myProduct = null;
        // setContentView(R.layout.product);
         switch(MainActivity.className)

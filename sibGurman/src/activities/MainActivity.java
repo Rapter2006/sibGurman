@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import sequenia.sibgurman.R;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -26,7 +25,6 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.bugsense.trace.BugSenseHandler;
 import com.bugsense.trace.ExceptionCallback;
-import com.devsmart.android.ui.HorizontalListView;
 
 
 public class MainActivity extends SherlockFragmentActivity implements ExceptionCallback
