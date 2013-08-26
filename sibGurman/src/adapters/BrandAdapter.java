@@ -33,6 +33,7 @@ public class BrandAdapter extends ArrayAdapter<Brand> {
         ImageView imageView = (ImageView) rowView.findViewById(R.id.pictureBrand);
         
         nameBrand.setText(items.get(position).getNameBrand());
+       
         imageView.setImageResource(items.get(position).getPictureId());
         
         return rowView;

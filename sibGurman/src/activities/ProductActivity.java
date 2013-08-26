@@ -1,20 +1,24 @@
 package activities;
 
 import sequenia.sibgurman.R;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 import classes.AllProducts;
 import classes.Product;
 import classes.Transporter;
+
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 
 public class ProductActivity extends SherlockFragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);  
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         Product myProduct = null;
-       // setContentView(R.layout.product);
         switch(MainActivity.className)
   	  {
   	  case 1: 

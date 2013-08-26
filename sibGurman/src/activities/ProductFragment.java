@@ -11,6 +11,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -43,12 +44,47 @@ public class ProductFragment extends Activity {
  
   public void setProductFragment(Brand brand)
   {
-	  for(int i = 0; i < brand.getProducts().size(); i++)
+	  int kol = brand.getProducts().size();
+	  if (kol == 1)
+	  {
+		  ImageView image = new ImageView(this);	 
+		  TextView text = new TextView(this);
+		  text.setTextSize(22);  
+		  text.setText((brand.
+			       getProducts().
+			       get(0).getName()));
+		  image.setImageResource(brand.
+	                 getProducts().
+	                 get(0).getPictureId());
+		  LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+				    550, 550);
+		  params.weight = 1;
+		  params.setMargins(30, 30, 30, 30);
+		  image.setLayoutParams(params);
+	 	  params = new LinearLayout.LayoutParams(
+				    LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		  params.weight = 1; 
+		  params.gravity = Gravity.CENTER_HORIZONTAL;
+		  text.setSingleLine(false);
+		  text.setMaxLines(3);
+		  text.setLayoutParams(params); 
+		  image.setOnClickListener(new  OnClickListener() {
+			 @Override
+			 public void onClick(View v) {
+					Intent intent = new Intent(ProductFragment.this, ProductActivity.class);
+				    Transporter.positionProduct = 0;
+			   	    startActivity(intent);			
+				}
+			});
+		  ForRow newRow = new ForRow(image, text);
+	      list.add(newRow);
+	  }
+	  else
+	  for(int i = 0; i < kol; i++)
 		  {
 			  final int k;
 			  k = i;
 			  ImageView image = new ImageView(this);
-			 
 			  TextView text = new TextView(this);
 			  text.setTextSize(22);
 			  
@@ -85,7 +121,9 @@ public class ProductFragment extends Activity {
   
   public void onCreate(Bundle savedInstanceState) {
 	  super.onCreate(savedInstanceState);
-	   setContentView(R.layout.main_list);
+	  requestWindowFeature(Window.FEATURE_NO_TITLE);
+	  setContentView(R.layout.main_list);
+	   
 	   getWindow().getDecorView().setBackgroundColor(Color.WHITE);
 	   LinearLayout layout1 = (LinearLayout)findViewById(R.id.lay1);
 	   LinearLayout layout2 = (LinearLayout)findViewById(R.id.lay2);
