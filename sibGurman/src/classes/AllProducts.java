@@ -147,7 +147,7 @@ public class AllProducts {
         listProduct.add(new Product("Домашние Секреты с творогом", "Сладкая начинка из свежего творога"
         		+ " с сахаром и добавлением ванили.", stor, R.drawable.atvorogvar, listPackage));
         listPackage = new ArrayList<Package>();
-        dumplings.add(new Brand("Домашние Секреты", listProduct));
+        dumplings.add(new Brand("Домашние Секреты", R.drawable.asgdomsecret, listProduct));
         listProduct = new ArrayList<Product>();
         //ТРИ ЯГОДКИ
         listPackage.add(new Package(6, 0.45, "Пакет"));
