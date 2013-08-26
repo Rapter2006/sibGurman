@@ -77,7 +77,7 @@ public class AllProducts {
 	    		+ " Необходимо только опустить суп в кипящую воду и варить 15 минут, добавив соль и специи.",
 	    		stor, R.drawable.asolan, listPackage));
         listPackage = new ArrayList<Package>();
-        soups.add(new Brand("Домашние секреты", listProduct));
+        soups.add(new Brand("Домашние секреты", R.drawable.asgdomsecret, listProduct));
 	}
 	
 	
@@ -88,25 +88,25 @@ public class AllProducts {
 	    List<Package> listPackage = new ArrayList<Package>();
 	    String stor = "Срок годности 180 суток при t – 18C";
 	    listPackage.add(new Package(7, 0.45, "Пакет"));
-	    listProduct.add(new Product("Cлоеное пресное Едим Дома. 5 пластин", 
+	    listProduct.add(new Product("Cлоеное пресное \"Едим Дома\". 5 пластин", 
 	    		"Тесто «Едим Дома» приготовлено на сливочном масле. Рецептура теста "
 	    		+ "максимально приближена к домашней. Выпечка получается пышной.", stor, 
 	    		R.drawable.aslfive, listPackage));
         listPackage = new ArrayList<Package>();
         listPackage.add(new Package(7, 0.45, "Пакет"));
-	    listProduct.add(new Product("Cлоеное дрожжевое Едим Дома. 5 пластин", 
+	    listProduct.add(new Product("Cлоеное дрожжевое \"Едим Дома\". 5 пластин", 
 	    		"Тесто «Едим Дома» приготовлено на сливочном масле. Рецептура теста "
 	    		+ "максимально приближена к домашней. Выпечка получается пышной.", stor, 
 	    		R.drawable.adrfive, listPackage));
         listPackage = new ArrayList<Package>();
         listPackage.add(new Package(5, 0.45, "Пакет"));
-	    listProduct.add(new Product("Cлоеное пресное Едим Дома. 2 пластины", 
+	    listProduct.add(new Product("Cлоеное пресное \"Едим Дома\". 2 пластины", 
 	    		"Тесто «Едим Дома» приготовлено на сливочном масле. Рецептура теста "
 	    		+ "максимально приближена к домашней. Выпечка получается пышной.", stor, 
 	    		R.drawable.asltwo, listPackage));
         listPackage = new ArrayList<Package>();
         listPackage.add(new Package(5, 0.45, "Пакет"));
-	    listProduct.add(new Product("Cлоеное дрожжевое Едим Дома. 2 пластины", 
+	    listProduct.add(new Product("Cлоеное дрожжевое \"Едим Дома\". 2 пластины", 
 	    		"Тесто «Едим Дома» приготовлено на сливочном масле. Рецептура теста "
 	    		+ "максимально приближена к домашней. Выпечка получается пышной.", stor, 
 	    		R.drawable.adrtwo, listPackage));
@@ -254,13 +254,13 @@ public class AllProducts {
         listProduct = new ArrayList<Product>();
         //ЕДИМ ДОМА
         listPackage.add(new Package(10, 0.9, "Пакет с клипсой"));
-        listProduct.add(new Product("Едим Дома классические", "Пельмени такие, какими они должны быть: "
+        listProduct.add(new Product("\"Едим Дома\" классические", "Пельмени такие, какими они должны быть: "
         		+ "тонкое нежное тесто с традиционной сочной мясной начинкой из свинины, говядины,"
         		+ " лука и перца." + "Пельмени обычного размера 10 гр. В пельменях много начинки: "
         		+ "55% фарша и 45% теста", stor, R.drawable.edimdoma, listPackage));
         listPackage = new ArrayList<Package>();
         listPackage.add(new Package(10, 0.9, "Пакет с клипсой"));
-	    listProduct.add(new Product("«Сибирские мини»", "Мини-пельмени обычного размера 5 гр.В пельменях "
+	    listProduct.add(new Product("\"Сибирские мини\"", "Мини-пельмени обычного размера 5 гр.В пельменях "
 	    		+ "очень много начинки: 60% фарша и 40% теста", stor, R.drawable.edimdomasib, listPackage)); 
 	    listPackage = new ArrayList<Package>();
 	    pelmens.add(new Brand("Едим Дома", R.drawable.aedimdoma, listProduct));

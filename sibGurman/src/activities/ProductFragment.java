@@ -65,8 +65,6 @@ public class ProductFragment extends Activity {
 				    LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		  params.weight = 1; 
 		  params.gravity = Gravity.CENTER_HORIZONTAL;
-		  text.setSingleLine(false);
-		  text.setMaxLines(3);
 		  text.setLayoutParams(params); 
 		  image.setOnClickListener(new  OnClickListener() {
 			 @Override
@@ -103,8 +101,8 @@ public class ProductFragment extends Activity {
 				    LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 			 params.weight = 1; 
 			 params.gravity = Gravity.CENTER_HORIZONTAL;
-			 text.setSingleLine(false);
-			 text.setMaxLines(3);
+			// text.setSingleLine(false);
+			// text.setMaxLines(3);
 			 text.setLayoutParams(params); 
 			 image.setOnClickListener(new  OnClickListener() {
 			 @Override
@@ -187,10 +185,7 @@ public class ProductFragment extends Activity {
 			  layout3.addView(layout);
 		  }
 		  
-		   }
-	  
+		   }  
 // */
   }
- 
- 
 }//*/
