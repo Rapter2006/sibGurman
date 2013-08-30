@@ -66,6 +66,7 @@ public class ProductFragment extends Activity {
 		  params.weight = 1; 
 		  params.gravity = Gravity.CENTER_HORIZONTAL;
 		  text.setLayoutParams(params); 
+		  text.setGravity(Gravity.CENTER);
 		  image.setOnClickListener(new  OnClickListener() {
 			 @Override
 			 public void onClick(View v) {
@@ -77,6 +78,45 @@ public class ProductFragment extends Activity {
 		  ForRow newRow = new ForRow(image, text);
 	      list.add(newRow);
 	  }
+	  else if (kol == 2)
+	  {
+		  for(int i = 0; i < kol; i++)
+		  {
+			  final int k;
+			  k = i;
+			  ImageView image = new ImageView(this);
+			  TextView text = new TextView(this);
+			  text.setTextSize(18);
+			  
+			  text.setText(setTabs(brand.
+					       getProducts().
+					       get(i).getName(), 26));
+			  image.setImageResource(brand.
+					                 getProducts().
+					                 get(i).getPictureId());
+			 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+				    350, 350);
+			 params.weight = 1;
+			 params.setMargins(55, 55, 55, 55);
+			 image.setLayoutParams(params);
+	 	     params = new LinearLayout.LayoutParams(
+				    LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+			 params.weight = 1; 
+			 params.gravity = Gravity.CENTER_HORIZONTAL;
+			 text.setLayoutParams(params); 
+			 text.setGravity(Gravity.CENTER);
+			 image.setOnClickListener(new  OnClickListener() {
+			 @Override
+			 public void onClick(View v) {
+					Intent intent = new Intent(ProductFragment.this, ProductActivity.class);
+				    Transporter.positionProduct = k;
+			   	    startActivity(intent);			
+				}
+			});
+			  ForRow newRow = new ForRow(image, text);
+			  list.add(newRow);
+		  }  
+	  }
 	  else
 	  for(int i = 0; i < kol; i++)
 		  {
@@ -84,11 +124,11 @@ public class ProductFragment extends Activity {
 			  k = i;
 			  ImageView image = new ImageView(this);
 			  TextView text = new TextView(this);
-			  text.setTextSize(22);
+			  text.setTextSize(18);
 			  
 			  text.setText(setTabs(brand.
 					       getProducts().
-					       get(i).getName(), 12));
+					       get(i).getName(), 18));
 			  image.setImageResource(brand.
 					                 getProducts().
 					                 get(i).getPictureId());
@@ -101,9 +141,8 @@ public class ProductFragment extends Activity {
 				    LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 			 params.weight = 1; 
 			 params.gravity = Gravity.CENTER_HORIZONTAL;
-			// text.setSingleLine(false);
-			// text.setMaxLines(3);
-			 text.setLayoutParams(params); 
+			 text.setLayoutParams(params);
+			 text.setGravity(Gravity.CENTER);
 			 image.setOnClickListener(new  OnClickListener() {
 			 @Override
 			 public void onClick(View v) {
