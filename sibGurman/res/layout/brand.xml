@@ -3,30 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+
     <TableRow
         android:id="@+id/tableRow1"
-        android:paddingRight="25px"
-        android:paddingLeft="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-   
-     <ImageView
-        android:id="@+id/pictureBrand"
-        android:layout_width="285px"
-        android:layout_height="171px"
-        android:src="@drawable/nobrand"
-        />   
-        
-    <TextView
-        android:id="@+id/nameBrand"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="50dp"
-        android:textSize="50dp"
-        android:text="TextView" />
-    
-    
+        android:paddingLeft="25px"
+        android:paddingRight="25px" >
+
+        <ImageView
+            android:id="@+id/pictureBrand"
+            android:layout_width="185px"
+            android:layout_height="71px"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/nobrand" />
+
+        <TextView
+            android:id="@+id/nameBrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:text="TextView"
+            android:textSize="40dp" />
     </TableRow>
-    
+
 </LinearLayout>

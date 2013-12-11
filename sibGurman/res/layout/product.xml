@@ -3,218 +3,219 @@
     android:layout_height="fill_parent"
     android:layout_marginTop="5px"
     android:orientation="vertical" >
+
     <TextView
-             android:id="@+id/nameProduct"
-             android:padding="25px"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center"
-             android:contentDescription="27px"
-             android:text="name"
-             android:textColor="#1d1b13"
-             android:textSize="42px"
-             android:typeface="sans" >
-
-  </TextView>
-
-   <TableRow
-       android:id="@+id/tableRowMain"
-       android:layout_width="wrap_content"
-       android:layout_height="fill_parent"
-       android:layout_weight="10"
-       android:layout_marginLeft="10px"
-       android:layout_marginTop="10px">
-        
-        <ImageView
-            android:id="@+id/imageProduct"
-            android:layout_width="450dp"
-            android:layout_weight="3"
-            android:layout_height="450dp"
-            android:layout_gravity="bottom"
-            android:src="@drawable/android_logo"
-            android:adjustViewBounds="false">
-        </ImageView>
-      
-    
-   <LinearLayout
+        android:id="@+id/nameProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="7"
-        android:layout_marginLeft="10px"
-        android:layout_marginRight="10px"
         android:layout_gravity="center"
-        android:orientation="vertical" >
-      
-        <TextView
-            android:id="@+id/descriptionProduct"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:text="description"
-            android:layout_gravity="center"
-            android:textColor="#1d1b13"
-            android:textSize="30px" >
-        </TextView>
-       
-        <TextView
-            android:id="@+id/storageProduct"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:textColor="#1d1b13"
-            android:textSize="30px"
-            android:layout_marginTop="10px"
-            android:layout_gravity="center"
-            android:text="storage"/>
-         <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_marginTop="10px"
-            android:layout_gravity="center"
-            android:layout_height="fill_parent" 
-            android:id="@+id/tableProduct">   
-              <TableRow
-       			android:id="@+id/tableRow1"
-       			android:layout_width="match_parent"
-       			android:weightSum="3"
-       			android:gravity="center"
-       			android:layout_height="wrap_content" > 
-               
-                 <TextView
-		            android:id="@+id/number"
-		            android:layout_weight="1"
-		            android:layout_width="match_parent"
-		            android:layout_height="wrap_content"
-		            android:text="Число в упаковке"
-		            android:textColor="#1d1b13"
-		            android:textSize="30px" >
-		            </TextView>
-		        
-                 <TextView
-		            android:id="@+id/weight"
-		            android:layout_weight="1"
-		            android:layout_width="match_parent"
-		            android:layout_height="wrap_content"
-		            android:text="Вес"
-		            android:textColor="#1d1b13"
-		            android:textSize="30px" >
-		            </TextView>
-		            
-		         <TextView
-		            android:id="@+id/type"
-		            android:layout_weight="1"
-		            android:layout_width="match_parent"
-		            android:layout_height="wrap_content"
-		            android:text="Тип упаковки"
-		            android:textColor="#1d1b13"
-		            android:textSize="30px" >    
-		            </TextView>
-		             
-              </TableRow>
-               <TableRow
-       			android:id="@+id/tableRow2"
-       			android:layout_weight="3"
-       			android:layout_width="match_parent"
-       			android:layout_height="wrap_content" >
-		        
-                  <TextView
-		            android:id="@+id/numberOne"
-		            android:layout_weight="1"
-		            android:layout_width="match_parent"
-		            android:layout_height="wrap_content"
-		            android:text="Число в упаковке "
-		            android:textColor="#1d1b13"
-		            android:textSize="30px" >
-		            </TextView>
-                 <TextView
-		            android:id="@+id/weightOne"
-		            android:layout_weight="1"
-		            android:layout_width="match_parent"
-		            android:layout_height="wrap_content"
-		            android:text="Вес "
-		            android:textColor="#1d1b13"
-		            android:textSize="30px" >
-		            </TextView>
-		         <TextView
-		            android:id="@+id/typeOne"
-		            android:layout_weight="1"
-		            android:layout_width="match_parent"
-		            android:layout_height="wrap_content"
-		            android:text="Тип упаковки "
-		            android:textColor="#1d1b13"
-		            android:textSize="30px" >    
-		            </TextView>   
-                   
-              </TableRow>
-              <TableRow
-       			android:id="@+id/tableRow3"
-       			android:layout_weight="3"
-       			android:layout_width="fill_parent"
-       			android:layout_height="fill_parent" >
-		         
-                  <TextView
-		            android:id="@+id/numberTwo"
-		            android:layout_weight="1"
-		            android:layout_width="fill_parent"
-		            android:layout_height="wrap_content"
-		          
-		            android:textColor="#1d1b13"
-		            android:textSize="32px" >
-		            </TextView>
-                 <TextView
-		            android:id="@+id/weightTwo"
-		            android:layout_weight="1"
-		            android:layout_width="fill_parent"
-		            android:layout_height="wrap_content"
-		      
-		            android:textColor="#1d1b13"
-		            android:textSize="32px" >
-		            </TextView>
-		         <TextView
-		            android:id="@+id/typeTwo"
-		            android:layout_weight="1"
-		            android:layout_width="fill_parent"
-		            android:layout_height="wrap_content"
-		         
-		            android:textColor="#1d1b13"
-		            android:textSize="32px" >    
-		            </TextView>  
-              </TableRow>
-               <TableRow
-       			android:id="@+id/tableRow4"
-       			android:layout_weight="3"
-       			android:layout_width="fill_parent"
-       			android:layout_height="wrap_content" >
-		         
-                  <TextView
-		            android:id="@+id/numberThree"
-		            android:layout_weight="1"
-		            android:layout_width="fill_parent"
-		            android:layout_height="wrap_content"
-		           
-		            android:textColor="#1d1b13"
-		            android:textSize="30px" >
-		            </TextView>
-                 <TextView
-		            android:id="@+id/weightThree"
-		            android:layout_weight="1"
-		            android:layout_width="fill_parent"
-		            android:layout_height="wrap_content"
+        android:contentDescription="27px"
+        android:padding="25px"
+        android:text="name"
+        android:textColor="#1d1b13"
+        android:textSize="42px"
+        android:typeface="sans" >
+    </TextView>
 
-		            android:textColor="#1d1b13"
-		            android:textSize="30px" >
-		            </TextView>
-		         <TextView
-		            android:id="@+id/typeThree"
-		            android:layout_weight="1"
-		            android:layout_width="fill_parent"
-		            android:layout_height="wrap_content"
-		     
-		            android:textColor="#1d1b13"
-		            android:textSize="30px" >    
-		            </TextView>
-              </TableRow>
-        </TableLayout>
-    </LinearLayout>
-     </TableRow>
+    <TableRow
+        android:id="@+id/tableRowMain"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="10px"
+        android:layout_marginTop="10px"
+        android:layout_weight="10" >
 
- 
-    
+        <ImageView
+            android:id="@+id/imageProduct"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_gravity="top"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="3"
+            android:adjustViewBounds="false"
+            android:src="@drawable/android_logo" >
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10px"
+            android:layout_marginRight="10px"
+            android:layout_weight="7"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/descriptionProduct"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:text="description"
+                android:textColor="#1d1b13"
+                android:textSize="30px" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/storageProduct"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="10px"
+                android:text="storage"
+                android:textColor="#1d1b13"
+                android:textSize="30px" />
+
+            <TableLayout
+                android:id="@+id/tableProduct"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="10px" >
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:weightSum="3" >
+
+                    <TextView
+                        android:id="@+id/number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Число в упаковке"
+                        android:textColor="#1d1b13"
+                        android:textSize="30px" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Вес"
+                        android:textColor="#1d1b13"
+                        android:textSize="30px" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Тип упаковки"
+                        android:textColor="#1d1b13"
+                        android:textSize="30px" >
+                    </TextView>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3" >
+
+                    <TextView
+                        android:id="@+id/numberOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Число в упаковке "
+                        android:textColor="#1d1b13"
+                        android:textSize="30px" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/weightOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Вес "
+                        android:textColor="#1d1b13"
+                        android:textSize="30px" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/typeOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Тип упаковки "
+                        android:textColor="#1d1b13"
+                        android:textSize="30px" >
+                    </TextView>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="3" >
+
+                    <TextView
+                        android:id="@+id/numberTwo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#1d1b13"
+                        android:textSize="32px" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/weightTwo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#1d1b13"
+                        android:textSize="32px" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/typeTwo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#1d1b13"
+                        android:textSize="32px" >
+                    </TextView>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3" >
+
+                    <TextView
+                        android:id="@+id/numberThree"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#1d1b13"
+                        android:textSize="30px" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/weightThree"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#1d1b13"
+                        android:textSize="30px" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/typeThree"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#1d1b13"
+                        android:textSize="30px" >
+                    </TextView>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </TableRow>
+
 </LinearLayout>

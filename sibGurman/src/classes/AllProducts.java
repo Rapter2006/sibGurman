@@ -401,7 +401,7 @@ public class AllProducts {
 		pelmens.add(new Brand("Смешарики", R.drawable.alogosmeshariki,
 				listProduct));
 		listProduct = new ArrayList<Product>();
-		// ДОМАШНИЕ СЕКРЕТЫ
+		// ДОМАШНИЕ СЕКРЕТЫ(ручная лепка)
 		listPackage.add(new Package(12, 0.95, "Пакет"));
 		listPackage.add(new Package(24, 0.45, "Пакет"));
 		listPackage.add(new Package(6, 0.8, "Лоток"));
@@ -418,7 +418,11 @@ public class AllProducts {
 				"Являются миниатюрным аналогом"
 						+ " пельменей «Домашние» ручной лепки", stor,
 				R.drawable.aminipel, listPackage));
+		pelmens.add(new Brand("Домашние секреты (ручная лепка)",R.drawable.asgdomsecret,
+				listProduct));
+		// ДОМАШНИЕ СЕКРЕТЫ(автоматическая лепка)
 		listPackage = new ArrayList<Package>();
+		listProduct = new ArrayList<Product>();
 		listPackage.add(new Package(6, 0.9, "пакет"));
 		listProduct.add(new Product(
 				"Пельмени \"Домашние секреты\" (автоматическая лепка)", "Для современных людей, ориентированных на традиционные ценности семьи и домашнего очага",
@@ -428,7 +432,7 @@ public class AllProducts {
 		listProduct.add(new Product(
 				"Мини-пельмени \"Домашние секреты\" (автоматическая лепка)", "Для современных людей, ориентированных на традиционные ценности семьи и домашнего очага.",
 				stor, R.drawable.pelhomesecretmini, listPackage));
-		pelmens.add(new Brand("Домашние секреты", R.drawable.asgdomsecret,
+		pelmens.add(new Brand("Домашние секреты (автоматическая лепка)", R.drawable.asgdomsecret,
 				listProduct));
 		listProduct = new ArrayList<Product>();
 		listPackage = new ArrayList<Package>();

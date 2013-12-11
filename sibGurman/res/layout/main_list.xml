@@ -1,56 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:gravity="center"
-    
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    >   
-   <HorizontalScrollView
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <HorizontalScrollView
         android:id="@+id/horizontalScrollView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
 
         <ScrollView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:scrollbars="vertical" >
+            android:scrollbars="none" >
 
             <LinearLayout
                 android:id="@+id/table"
-                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-                
-               <LinearLayout
-                android:id="@+id/lay1"
-                android:weightSum="6"
-                 android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-               
-               <LinearLayout
-                android:id="@+id/lay2"
-                android:weightSum="6"
-                 android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-               
-               <LinearLayout
-                android:id="@+id/lay3"
-                android:weightSum="6"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-               
-                
-            </LinearLayout>
-  </ScrollView>
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
+                <LinearLayout
+                    android:id="@+id/lay1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="6" />
+
+                <LinearLayout
+                    android:id="@+id/lay2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="6" />
+
+                <LinearLayout
+                    android:id="@+id/lay3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="6" />
+            </LinearLayout>
+        </ScrollView>
     </HorizontalScrollView>
-            
 
 </LinearLayout>

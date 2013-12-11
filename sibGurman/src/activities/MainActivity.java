@@ -59,7 +59,7 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 	 mViewPager.setBackgroundColor(Color.argb(255, 255, 255, 255));
 	
 	 ActionBar bar = getSupportActionBar();
-	 bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+	 
 	 mTabsAdapter = new TabsAdapter(this, mViewPager);
 	
 	 AllProducts.initAll();
@@ -70,7 +70,7 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 	 mTabsAdapter.addTab(bar.newTab().setText("Тесто"), Dough.class, null);
 	 mTabsAdapter.addTab(bar.newTab().setText("Супы"), Soups.class, null);
 	 mTabsAdapter.addTab(bar.newTab().setText("Котлеты"), Chops.class, null);
-	 
+	 bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 	 setContentView(mViewPager);
 	}
  
