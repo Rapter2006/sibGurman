@@ -34,7 +34,7 @@ public class Chops extends SherlockListFragment{
 	     public void onItemClick(AdapterView<?> parent, View view,
                  int position, long id)
 	     	{	
-               MainActivity.className = 5;
+               MainActivity.className = 6;
                Transporter.positionBrand = position;
                MainActivity.pusitionItem = position;
                MainActivity.ls = Chops.this.getListView();

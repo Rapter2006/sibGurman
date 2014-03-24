@@ -29,13 +29,15 @@ public class ProductFragment extends Activity {
 		String answer = split[0] + " ";
 		int k = 0;
 		for (int i = 1; i < split.length; i++) {
-			if (answer.length() - k + split[i].length() < maxSymbols) {
+			if (split[i].contains("\n"))
+				k += split[i].length() + 1;
+			if (answer.length() - k + split[i].length() < maxSymbols
+					|| split[i].contains("\n")) {
 				answer += " " + split[i];
 			} else {
 				k = answer.length();
 				answer += '\n' + split[i];
 			}
-
 		}
 		return answer;
 	}
@@ -157,23 +159,27 @@ public class ProductFragment extends Activity {
 			break;
 		}
 		case 2: {
+			setProductFragment(AllProducts.fri.get(MainActivity.pusitionItem));
+			break;
+		}
+		case 3: {
 			setProductFragment(AllProducts.pancakes
 					.get(MainActivity.pusitionItem));
 			break;
 		}
-		case 3: {
+		case 4: {
 			setProductFragment(AllProducts.dough.get(MainActivity.pusitionItem));
 			break;
 		}
-		case 4: {
+		case 5: {
 			setProductFragment(AllProducts.soups.get(MainActivity.pusitionItem));
 			break;
 		}
-		case 5: {
+		case 6: {
 			setProductFragment(AllProducts.chops.get(MainActivity.pusitionItem));
 			break;
 		}
-		case 6: {
+		case 7: {
 			setProductFragment(AllProducts.dumplings
 					.get(MainActivity.pusitionItem));
 			break;

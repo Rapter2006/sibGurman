@@ -12,35 +12,34 @@ import classes.Transporter;
 
 import com.actionbarsherlock.app.SherlockListFragment;
 
-
-public class Pelmens extends SherlockListFragment{
+public class Pelmens extends SherlockListFragment {
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
-   	{    
-	    BrandAdapter adapter = new BrandAdapter(getActivity().getBaseContext(), AllProducts.pelmens);
-	    setListAdapter(adapter); 
-	    return super.onCreateView(inflater, container, savedInstanceState);		
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		BrandAdapter adapter = new BrandAdapter(getActivity().getBaseContext(),
+				AllProducts.pelmens);
+		setListAdapter(adapter);
+		return super.onCreateView(inflater, container, savedInstanceState);
 	}
 
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
 
-@Override
-   public void onActivityCreated(Bundle savedInstanceState)
-   { 
-	super.onActivityCreated(savedInstanceState);
-
-	this.getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
-	     public void onItemClick(AdapterView<?> parent, View view,
-                 int position, long id)
-	     	{	
-	    	   MainActivity.className = 1;
-               Transporter.positionBrand = position;
-               MainActivity.pusitionItem = position;
-               if (MainActivity.lv != null)
-            	   MainActivity.lv.setVisibility(View.VISIBLE);
-               Intent intent = new Intent(getActivity(), ProductFragment.class);
-               startActivity(intent);
-            }
-		});
-   }
+		this.getListView().setOnItemClickListener(
+				new AdapterView.OnItemClickListener() {
+					public void onItemClick(AdapterView<?> parent, View view,
+							int position, long id) {
+						MainActivity.className = 1;
+						Transporter.positionBrand = position;
+						MainActivity.pusitionItem = position;
+						if (MainActivity.lv != null)
+							MainActivity.lv.setVisibility(View.VISIBLE);
+						Intent intent = new Intent(getActivity(),
+								ProductFragment.class);
+						startActivity(intent);
+					}
+				});
+	}
 
 }

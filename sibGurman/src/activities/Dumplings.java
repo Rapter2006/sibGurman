@@ -32,7 +32,7 @@ public class Dumplings extends SherlockListFragment{
 	     public void onItemClick(AdapterView<?> parent, View view,
                  int position, long id)
 	     	{	
-               MainActivity.className = 6;
+               MainActivity.className = 7;
                Transporter.positionBrand = position;
                MainActivity.pusitionItem = position;
                MainActivity.ls = Dumplings.this.getListView();

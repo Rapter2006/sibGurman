@@ -65,6 +65,7 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 	 AllProducts.initAll();
 
 	 mTabsAdapter.addTab(bar.newTab().setText("Пельмени/Хинкали/Манты"), Pelmens.class, null);
+	 mTabsAdapter.addTab(bar.newTab().setText("Жареные продукты"), Fri.class, null);
 	 mTabsAdapter.addTab(bar.newTab().setText("Блины"), Pancakes.class, null);
      mTabsAdapter.addTab(bar.newTab().setText("Вареники"), Dumplings.class, null); 
 	 mTabsAdapter.addTab(bar.newTab().setText("Тесто"), Dough.class, null);
@@ -91,7 +92,7 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 		ImageView image = (ImageView) dialog.findViewById(R.id.gurman);
 		image.setImageResource(R.drawable.gurman_logo);
 		TextView text = (TextView) dialog.findViewById(R.id.text);
-		text.setText(" Каталог продукции компании \"Сибирский Гурман\" \n\n Версия 1.0 \n\n Создано "
+		text.setText(" Каталог продукции компании \"Сибирский Гурман\" \n\n Версия 1.4 \n\n Создано "
 				+ "компанией \"Секвения\" ");
 		
 		dialog.show();

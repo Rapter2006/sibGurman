@@ -7,6 +7,7 @@ import sequenia.sibgurman.R;
 
 public class AllProducts {
 	public static List<Brand> pelmens;
+	public static List<Brand> fri;
 	public static List<Brand> pancakes;
 	public static List<Brand> dumplings;
 	public static List<Brand> dough;
@@ -15,6 +16,7 @@ public class AllProducts {
 
 	public static void initAll() {
 		initPelmens();
+		initFri();
 		initPancakes();
 		initDumplings();
 		initDough();
@@ -22,45 +24,37 @@ public class AllProducts {
 		initChops();
 	}
 
+	public static void initFri() {
+		fri = new ArrayList<Brand>();
+		List<Product> listProduct = new ArrayList<Product>();
+		List<Package> listPackage = new ArrayList<Package>();
+		String stor = "Срок годности 180 суток при t – 18C                                                                              ";
+		listPackage.add(new Package(12, 0.32, "Лоток"));
+		listProduct
+				.add(new Product(
+						"Жареные колобки с мясом \"Русское ранчо\"",
+						"Аппетитные, золотистые, поджаристые.\n"
+								+ "Сочная мясная начинка и тонкое хрустящее тесто.\n"
+								+ "Много начинки: 50%\n"
+								+ "Просто приготовить: достаточно разогреть 1-2 минуты в СВЧ\n"
+								+ "Можно разогревать  в лотке, достаточно снять верхнюю пленку",
+						stor, R.drawable.frirusranchkolob, listPackage));
+		listPackage = new ArrayList<Package>();
+		listPackage.add(new Package(12, 0.30, "Лоток"));
+		listProduct
+				.add(new Product(
+						"Жареные чебуречики \"Русское ранчо\"",
+						"Аппетитные, золотистые, поджаристые.\n"
+								+ "Сочная мясная начинка и тонкое хрустящее тесто.\n"
+								+ "Много начинки: 50%\n"
+								+ "Просто приготовить: достаточно разогреть 1-2 минуты в СВЧ\n"
+								+ "Можно разогревать  в лотке, достаточно снять верхнюю пленку",
+						stor, R.drawable.frirusranchchebureck, listPackage));
+		fri.add(new Brand("Русское ранчо", R.drawable.rusranchlogo, listProduct));
+	}
+
 	public static void initChops() // Котлеты
 	{
-		/*
-		 * chops = new ArrayList<Brand>(); List<Product> listProduct = new
-		 * ArrayList<Product>(); List<Package> listPackage = new
-		 * ArrayList<Package>(); String stor =
-		 * "Срок годности 180 суток при t – 18C                                                                              "
-		 * ; listPackage.add(new Package(8, 0.48, "Лоток")); listProduct.add(new
-		 * Product("Тефтели",
-		 * "Рубленный полуфабрикат круглой формы с традиционной рецептурой из говядины и свинины с добавлением риса. Имеют средний размер - 80 гр/шт."
-		 * , stor, R.drawable.ateftel, listPackage)); listPackage = new
-		 * ArrayList<Package>(); chops.add(new Brand("Тефтели",
-		 * R.drawable.m9co9rmarka, listProduct)); listProduct = new
-		 * ArrayList<Product>(); listPackage.add(new Package(8, 0.48, "Лоток"));
-		 * listProduct.add(new Product("Котлеты домашние",
-		 * "Традиционный вкус, основанный на сочетании свинины и говядины с добавлением лука. "
-		 * + "Котлеты овальной формы, среднего размера - 80 гр/шт." , stor,
-		 * R.drawable.adom, listPackage)); listPackage = new
-		 * ArrayList<Package>(); chops.add(new Brand("Котлеты",
-		 * R.drawable.m9co9rmarka, listProduct)); listProduct = new
-		 * ArrayList<Product>();
-		 * 
-		 * listPackage.add(new Package(8, 0.48, "Лоток")); listProduct.add(new
-		 * Product("Ёжики",
-		 * "Популярный продукт из мясного фарша с добавлением риса. (50 гр/шт)",
-		 * stor, R.drawable.aezik, listPackage)); listPackage = new
-		 * ArrayList<Package>(); chops.add(new Brand("Ёжики",
-		 * R.drawable.m9co9rmarka, listProduct)); listProduct = new
-		 * ArrayList<Product>();
-		 * 
-		 * listPackage = new ArrayList<Package>(); listPackage.add(new
-		 * Package(8, 0.48, "Лоток")); listProduct.add(new
-		 * Product("Бифштекс \"Мясная Ярмарка\"",
-		 * "Самые популярные котлеты по классической рецептуре из говядины." +
-		 * " Имеют удлиненную форму и средний размер(80гр/шт)", stor,
-		 * R.drawable.bif, listPackage)); listPackage = new
-		 * ArrayList<Package>(); chops.add(new Brand("Бифштекс",
-		 * R.drawable.m9co9rmarka, listProduct));
-		 */
 
 		chops = new ArrayList<Brand>();
 		List<Product> listProduct = new ArrayList<Product>();
@@ -139,34 +133,34 @@ public class AllProducts {
 		List<Product> listProduct = new ArrayList<Product>();
 		List<Package> listPackage = new ArrayList<Package>();
 		String stor = "Срок годности 180 суток при t – 18C                                                                              ";
-		listPackage.add(new Package(7, 0.45, "Пакет"));
+		listPackage.add(new Package(8, 0.45, "Пакет"));
 		listProduct
 				.add(new Product(
-						"Cлоеное пресное \"Едим Дома\". 5 пластин",
+						"Cлоеное пресное \"Едим Дома\".\n5 пластин",
 						"Тесто «Едим Дома» приготовлено на сливочном масле. Рецептура теста "
 								+ "максимально приближена к домашней. Выпечка получается пышной.",
 						stor, R.drawable.aslfive, listPackage));
 		listPackage = new ArrayList<Package>();
-		listPackage.add(new Package(7, 0.45, "Пакет"));
+		listPackage.add(new Package(8, 0.45, "Пакет"));
 		listProduct
 				.add(new Product(
-						"Cлоеное дрожжевое \"Едим Дома\". 5 пластин",
+						"Cлоеное дрожжевое \"Едим Дома\".\n5 пластин",
 						"Тесто «Едим Дома» приготовлено на сливочном масле. Рецептура теста "
 								+ "максимально приближена к домашней. Выпечка получается пышной.",
 						stor, R.drawable.adrfive, listPackage));
 		listPackage = new ArrayList<Package>();
-		listPackage.add(new Package(5, 0.45, "Пакет"));
+		listPackage.add(new Package(7, 0.45, "Пакет"));
 		listProduct
 				.add(new Product(
-						"Cлоеное пресное \"Едим Дома\". 2 пластины",
+						"Cлоеное пресное \"Едим Дома\".\n2 пластины",
 						"Тесто «Едим Дома» приготовлено на сливочном масле. Рецептура теста "
 								+ "максимально приближена к домашней. Выпечка получается пышной.",
 						stor, R.drawable.asltwo, listPackage));
 		listPackage = new ArrayList<Package>();
-		listPackage.add(new Package(5, 0.45, "Пакет"));
+		listPackage.add(new Package(7, 0.45, "Пакет"));
 		listProduct
 				.add(new Product(
-						"Cлоеное дрожжевое \"Едим Дома\". 2 пластины",
+						"Cлоеное дрожжевое \"Едим Дома\".\n2 пластины",
 						"Тесто «Едим Дома» приготовлено на сливочном масле. Рецептура теста "
 								+ "максимально приближена к домашней. Выпечка получается пышной.",
 						stor, R.drawable.adrtwo, listPackage));
@@ -413,27 +407,37 @@ public class AllProducts {
 						stor, R.drawable.asekret, listPackage));
 		listPackage = new ArrayList<Package>();
 		listPackage.add(new Package(10, 0.7, "Пакет"));
-		listProduct.add(new Product(
-				"Пельмени \"Домашние Секреты\" \"Деликатесные\" (ручная лепка)",
-				"Являются миниатюрным аналогом"
-						+ " пельменей «Домашние» ручной лепки", stor,
-				R.drawable.aminipel, listPackage));
-		pelmens.add(new Brand("Домашние секреты (ручная лепка)",R.drawable.asgdomsecret,
-				listProduct));
+		listProduct
+				.add(new Product(
+						"Пельмени \"Домашние Секреты\"\n(ручная лепка)",
+						"Являются миниатюрным аналогом"
+								+ " пельменей «Домашние» ручной лепки", stor,
+						R.drawable.aminipel, listPackage));
+		pelmens.add(new Brand("Домашние секреты (ручная лепка)",
+				R.drawable.asgdomsecret, listProduct));
 		// ДОМАШНИЕ СЕКРЕТЫ(автоматическая лепка)
 		listPackage = new ArrayList<Package>();
 		listProduct = new ArrayList<Product>();
 		listPackage.add(new Package(6, 0.9, "пакет"));
-		listProduct.add(new Product(
-				"Пельмени \"Домашние секреты\" (автоматическая лепка)", "Для современных людей, ориентированных на традиционные ценности семьи и домашнего очага",
-				stor, R.drawable.pelhomesecretstand, listPackage));
+		listProduct
+				.add(new Product(
+						"Пельмени \"Домашние секреты\" (автоматическая лепка)",
+						"Для современных людей, ориентированных на традиционные ценности семьи и домашнего очага",
+						stor, R.drawable.pelhomesecretstand, listPackage));
 		listPackage = new ArrayList<Package>();
 		listPackage.add(new Package(6, 0.9, "пакет"));
-		listProduct.add(new Product(
-				"Мини-пельмени \"Домашние секреты\" (автоматическая лепка)", "Для современных людей, ориентированных на традиционные ценности семьи и домашнего очага.",
-				stor, R.drawable.pelhomesecretmini, listPackage));
-		pelmens.add(new Brand("Домашние секреты (автоматическая лепка)", R.drawable.asgdomsecret,
-				listProduct));
+		listProduct
+				.add(new Product(
+						"Мини-пельмени \"Домашние секреты\" (автоматическая лепка)",
+						"Для современных людей, ориентированных на традиционные ценности семьи и домашнего очага.",
+						stor, R.drawable.pelhomesecretmini, listPackage));
+		listPackage = new ArrayList<Package>();
+		listPackage.add(new Package(10, 0.72, "Лоток"));
+		listProduct.add(new Product("Манты",
+				"Традиционный продукт уйгурской кухни", stor,
+				R.drawable.pelhomesecretmanty, listPackage));
+		pelmens.add(new Brand("Домашние секреты (автоматическая лепка)",
+				R.drawable.asgdomsecret, listProduct));
 		listProduct = new ArrayList<Product>();
 		listPackage = new ArrayList<Package>();
 		// МЯСНАЯ ЯРМАРКА
@@ -464,6 +468,17 @@ public class AllProducts {
 		listProduct.add(new Product("Пельмени \"Мясная Ярмарка\" \"Поварята\"",
 				"Мини-пельмени на основе свинины и говядины", stor,
 				R.drawable.povar, listPackage));
+		stor = "Срок годности 180 суток при t - 18C                                                                              ";
+		listPackage = new ArrayList<Package>();
+		listPackage.add(new Package(6, 0.72, "пакет"));
+		listProduct.add(new Product("Позы \"Мясная ярмарка\"",
+				"Позы \"Мясная ярмарка\"", stor, R.drawable.pelmeatfairpoz,
+				listPackage));
+		listPackage = new ArrayList<Package>();
+		listPackage.add(new Package(6, 0.8, "пакет"));
+		listProduct.add(new Product("Хинкали \"Мясная ярмарка\"",
+				"Хинкали \"Мясная ярмарка\"", stor, R.drawable.pelmeatfairhink,
+				listPackage));
 		listPackage = new ArrayList<Package>();
 		pelmens.add(new Brand("Мясная ярмарка", R.drawable.m9co9rmarkabig,
 				listProduct));
@@ -474,11 +489,7 @@ public class AllProducts {
 		listProduct.add(new Product("Пельмени \"Элитные\"",
 				"Ручная лепка и отборное сырье", stor, R.drawable.elite,
 				listPackage));
-		listPackage = new ArrayList<Package>();
-		listPackage.add(new Package(10, 0.72, "Лоток"));
-		listProduct.add(new Product("Манты",
-				"Традиционный продукт уйгурской кухни", stor,
-				R.drawable.amanty, listPackage));
+
 		listPackage = new ArrayList<Package>();
 		listPackage.add(new Package(6, 1, "пакет"));
 		listProduct.add(new Product("Пельмени \"Сытные\"",
@@ -532,6 +543,6 @@ public class AllProducts {
 						+ "домашних пельменей. Имеют маленький размер.", stor,
 				R.drawable.aextra, listPackage));
 		listPackage = new ArrayList<Package>();
-		pelmens.add(new Brand("Эконом", listProduct));
+		pelmens.add(new Brand("Эконом", R.drawable.empty_pic, listProduct));
 	}
 }

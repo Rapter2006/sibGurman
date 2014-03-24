@@ -34,7 +34,7 @@ public class Soups extends SherlockListFragment{
                  int position, long id)
 	     	{	
 	    	   Transporter.positionBrand = position;
-               MainActivity.className = 4;
+               MainActivity.className = 5;
                MainActivity.pusitionItem = position;
                MainActivity.ls = Soups.this.getListView();
                Intent intent = new Intent(getActivity(), ProductFragment.class);

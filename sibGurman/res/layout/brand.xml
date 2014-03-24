@@ -13,12 +13,13 @@
 
         <ImageView
             android:id="@+id/pictureBrand"
-            android:layout_width="185px"
-            android:layout_height="71px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:src="@drawable/nobrand" />
 
         <TextView
+            android:layout_gravity="center_vertical"
             android:id="@+id/nameBrand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

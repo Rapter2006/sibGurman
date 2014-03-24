@@ -34,7 +34,7 @@ public class Dough extends SherlockListFragment{
                  int position, long id)
 	     	{	
 
-               MainActivity.className = 3;
+               MainActivity.className = 4;
                Transporter.positionBrand = position;
                MainActivity.pusitionItem = position;
                MainActivity.ls = Dough.this.getListView();

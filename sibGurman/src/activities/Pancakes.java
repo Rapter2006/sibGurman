@@ -33,7 +33,7 @@ public class Pancakes extends SherlockListFragment{
 	     public void onItemClick(AdapterView<?> parent, View view,
                  int position, long id)
 	     	{	
-               MainActivity.className = 2;
+               MainActivity.className = 3;
                Transporter.positionBrand = position;
                MainActivity.pusitionItem = position;
                MainActivity.ls = Pancakes.this.getListView();
