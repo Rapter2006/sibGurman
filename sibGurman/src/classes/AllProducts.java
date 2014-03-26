@@ -24,7 +24,8 @@ public class AllProducts {
 	public static List<ProductCategory> allProducts;
 
 	public static void initAllProducts(Context context) throws JSONException {
-		InputStream is = context.getResources().openRawResource(R.raw.sibgurman_catalog);
+		InputStream is = context.getResources().openRawResource(
+				R.raw.sibgurman_catalog);
 		Writer writer = new StringWriter();
 		char[] buffer = new char[1024];
 		try {
@@ -92,8 +93,21 @@ public class AllProducts {
 					"drawable", context.getPackageName());
 			JSONArray jsonPackages = jsonProduct.getJSONArray("package");
 			List<Package> packages = getPackagesFromJSONArray(jsonPackages);
-			result.add(new Product(productName, desc, storage, pictureId,
-					packages));
+			Product product = new Product(productName, desc, storage,
+					pictureId, packages);
+
+			try {
+				String brandListPictureName = jsonProduct
+						.getString("image_brandlist");
+				int brandListPicId = context.getResources().getIdentifier(
+						brandListPictureName, "drawable",
+						context.getPackageName());
+				product.setPictureForListView(brandListPicId);
+			} catch (Exception exception) {
+				System.out.println("Brand list picture undefined");
+			}
+			
+			result.add(product);
 		}
 		return result;
 	}
@@ -109,5 +123,5 @@ public class AllProducts {
 			result.add(new Package(qty, weight, packageName));
 		}
 		return result;
-	}	
+	}
 }

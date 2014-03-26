@@ -39,7 +39,7 @@ public class ProductCategoryListGragment extends SherlockListFragment {
 				new AdapterView.OnItemClickListener() {
 					public void onItemClick(AdapterView<?> parent, View view,
 							int position, long id) {
-						MainActivity.className = index;
+						MainActivity.indexCategory = index;
 						Transporter.positionBrand = position;
 						MainActivity.pusitionItem = position;
 						MainActivity.ls = ProductCategoryListGragment.this.getListView();

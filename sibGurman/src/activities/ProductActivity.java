@@ -19,7 +19,7 @@ public class ProductActivity extends SherlockFragmentActivity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().getDecorView().setBackgroundColor(Color.WHITE);
 		Product myProduct = null;
-		myProduct = AllProducts.allProducts.get(MainActivity.className).brands
+		myProduct = AllProducts.allProducts.get(MainActivity.indexCategory).brands
 				.get(Transporter.positionBrand).getProducts()
 				.get(Transporter.positionProduct);
 		setContentView(R.layout.product);
@@ -33,7 +33,7 @@ public class ProductActivity extends SherlockFragmentActivity {
 
 			textViewDescriptionProduct.setText(myProduct.getDescription());
 			textViewStorageProduct.setText(myProduct.getStorage());
-			imageView.setImageResource(myProduct.getPictureId());
+			imageView.setImageResource(myProduct.getPictureForDetailView());
 
 			TextView firstNumber = (TextView) findViewById(R.id.numberOne);
 			firstNumber.setText(Integer.toString(myProduct.getPacks().get(0)

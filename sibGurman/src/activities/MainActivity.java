@@ -34,13 +34,13 @@ public class MainActivity extends SherlockFragmentActivity implements
 		ExceptionCallback {
 	TextView menuView;
 	public static int pusitionItem;
-	public static int className;
+	public static int indexCategory;
 	public static ListView ls; // отвечает за продукты
 	public static ListView lv; // отвечает за бренды
 	public static ListView mainListView; // отвечает за отображение продуктов
 											// поименно
 	ViewPager mViewPager;
-
+	
 	TabsAdapter mTabsAdapter;
 	TextView mContentTextView;
 	TextView tabCenter, tabText;
@@ -48,9 +48,9 @@ public class MainActivity extends SherlockFragmentActivity implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		
 		BugSenseHandler.initAndStartSession(MainActivity.this, "86f7797a");
-
+		
 		getSupportActionBar().setIcon(R.drawable.gurman_logo);
 		getSupportActionBar().setTitle("");
 

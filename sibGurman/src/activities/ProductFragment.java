@@ -49,7 +49,8 @@ public class ProductFragment extends Activity {
 			TextView text = new TextView(this);
 			text.setTextSize(22);
 			text.setText((brand.getProducts().get(0).getName()));
-			image.setImageResource(brand.getProducts().get(0).getPictureId());
+			image.setImageResource(brand.getProducts().get(0)
+					.getPictureForListView());
 			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 					550, 550);
 			params.weight = 1;
@@ -82,7 +83,7 @@ public class ProductFragment extends Activity {
 
 				text.setText(setTabs(brand.getProducts().get(i).getName(), 26));
 				image.setImageResource(brand.getProducts().get(i)
-						.getPictureId());
+						.getPictureForListView());
 				LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 						350, 350);
 				params.weight = 1;
@@ -116,7 +117,7 @@ public class ProductFragment extends Activity {
 
 				text.setText(setTabs(brand.getProducts().get(i).getName(), 18));
 				image.setImageResource(brand.getProducts().get(i)
-						.getPictureId());
+						.getPictureForListView());
 				LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 						350, 350);
 				params.weight = 1;
@@ -152,7 +153,8 @@ public class ProductFragment extends Activity {
 		LinearLayout layout2 = (LinearLayout) findViewById(R.id.lay2);
 		LinearLayout layout3 = (LinearLayout) findViewById(R.id.lay3);
 
-		setProductFragment(AllProducts.allProducts.get(MainActivity.className).brands
+		setProductFragment(AllProducts.allProducts
+				.get(MainActivity.indexCategory).brands
 				.get(MainActivity.pusitionItem));
 		LinearLayout layout;
 		for (int i = 0; i < list.size(); i++) {

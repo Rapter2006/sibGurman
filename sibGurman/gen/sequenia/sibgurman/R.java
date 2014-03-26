@@ -975,17 +975,18 @@ containing a value of this type.
         public static final int pancakerulstraw=0x7f0200ae;
         public static final int pancakerultvor=0x7f0200af;
         public static final int pelhomesecretmanty=0x7f0200b0;
-        public static final int pelhomesecretmini=0x7f0200b1;
-        public static final int pelhomesecretstand=0x7f0200b2;
-        public static final int pelmeatfairhink=0x7f0200b3;
-        public static final int pelmeatfairpoz=0x7f0200b4;
-        public static final int povar=0x7f0200b5;
-        public static final int rusranchlogo=0x7f0200b6;
-        public static final int smesh=0x7f0200b7;
-        public static final int soch=0x7f0200b8;
-        public static final int three9god=0x7f0200b9;
-        public static final int vostoch=0x7f0200ba;
-        public static final int zastol=0x7f0200bb;
+        public static final int pelhomesecretmanty_brand_list=0x7f0200b1;
+        public static final int pelhomesecretmini=0x7f0200b2;
+        public static final int pelhomesecretstand=0x7f0200b3;
+        public static final int pelmeatfairhink=0x7f0200b4;
+        public static final int pelmeatfairpoz=0x7f0200b5;
+        public static final int povar=0x7f0200b6;
+        public static final int rusranchlogo=0x7f0200b7;
+        public static final int smesh=0x7f0200b8;
+        public static final int soch=0x7f0200b9;
+        public static final int three9god=0x7f0200ba;
+        public static final int vostoch=0x7f0200bb;
+        public static final int zastol=0x7f0200bc;
     }
     public static final class id {
         public static final int abs__action_bar=0x7f050020;
