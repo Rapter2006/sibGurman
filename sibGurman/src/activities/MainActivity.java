@@ -1,6 +1,9 @@
 package activities;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONException;
 
 import sequenia.sibgurman.R;
 import android.app.Dialog;
@@ -17,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import classes.AllProducts;
+import classes.ProductCategory;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
@@ -26,67 +30,69 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.bugsense.trace.BugSenseHandler;
 import com.bugsense.trace.ExceptionCallback;
 
-
-public class MainActivity extends SherlockFragmentActivity implements ExceptionCallback
-{
+public class MainActivity extends SherlockFragmentActivity implements
+		ExceptionCallback {
 	TextView menuView;
 	public static int pusitionItem;
 	public static int className;
 	public static ListView ls; // отвечает за продукты
-	public static ListView lv; //отвечает за бренды
-	public static ListView mainListView; //отвечает за отображение продуктов поименно
+	public static ListView lv; // отвечает за бренды
+	public static ListView mainListView; // отвечает за отображение продуктов
+											// поименно
 	ViewPager mViewPager;
-	
-    TabsAdapter mTabsAdapter;
-    TextView mContentTextView;
-    TextView tabCenter, tabText;
- @Override
- 	public void onCreate(Bundle savedInstanceState)
- 	{
-	 super.onCreate(savedInstanceState);
-	 
-	 BugSenseHandler.initAndStartSession(MainActivity.this, "86f7797a");
-	 
-	 getSupportActionBar().setIcon(R.drawable.gurman_logo);
-	 getSupportActionBar().setTitle("");
-	 
-	 
-	 getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-	            WindowManager.LayoutParams.FLAG_FULLSCREEN);	 
-	 mViewPager = new ViewPager(this);
-	 
-	 mViewPager.setId(R.id.pager);
-	 mViewPager.setBackgroundColor(Color.argb(255, 255, 255, 255));
-	
-	 ActionBar bar = getSupportActionBar();
-	 
-	 mTabsAdapter = new TabsAdapter(this, mViewPager);
-	
-	 AllProducts.initAll();
 
-	 mTabsAdapter.addTab(bar.newTab().setText("Пельмени/Хинкали/Манты"), Pelmens.class, null);
-	 mTabsAdapter.addTab(bar.newTab().setText("Жареные продукты"), Fri.class, null);
-	 mTabsAdapter.addTab(bar.newTab().setText("Блины"), Pancakes.class, null);
-     mTabsAdapter.addTab(bar.newTab().setText("Вареники"), Dumplings.class, null); 
-	 mTabsAdapter.addTab(bar.newTab().setText("Тесто"), Dough.class, null);
-	 mTabsAdapter.addTab(bar.newTab().setText("Супы"), Soups.class, null);
-	 mTabsAdapter.addTab(bar.newTab().setText("Котлеты"), Chops.class, null);
-	 bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-	 setContentView(mViewPager);
+	TabsAdapter mTabsAdapter;
+	TextView mContentTextView;
+	TextView tabCenter, tabText;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		BugSenseHandler.initAndStartSession(MainActivity.this, "86f7797a");
+
+		getSupportActionBar().setIcon(R.drawable.gurman_logo);
+		getSupportActionBar().setTitle("");
+
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		mViewPager = new ViewPager(this);
+
+		mViewPager.setId(R.id.pager);
+		mViewPager.setBackgroundColor(Color.argb(255, 255, 255, 255));
+
+		ActionBar bar = getSupportActionBar();
+
+		mTabsAdapter = new TabsAdapter(this, mViewPager);
+
+		try {
+			AllProducts.initAllProducts(this);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		List<ProductCategory> categories = AllProducts.allProducts;
+		for(int i = 0;i<categories.size();i++){
+			Bundle bundle = new Bundle();
+			bundle.putInt("index", i);
+			mTabsAdapter.addTab(bar.newTab().setText(categories.get(i).categoryName),ProductCategoryListGragment.class, bundle);
+		}
+		bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		setContentView(mViewPager);
 	}
- 
- @Override
- public boolean onCreateOptionsMenu(Menu menu) {
 
-	 MenuInflater inflater = getSupportMenuInflater();
-	    inflater.inflate(R.menu.main, menu);
-	    return super.onCreateOptionsMenu(menu);
- }
- 
- @Override
- public boolean onOptionsItemSelected(
-         com.actionbarsherlock.view.MenuItem item) {
-	    final Dialog dialog = new Dialog(this);
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		MenuInflater inflater = getSupportMenuInflater();
+		inflater.inflate(R.menu.main, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(
+			com.actionbarsherlock.view.MenuItem item) {
+		final Dialog dialog = new Dialog(this);
 		dialog.setContentView(R.layout.dialog);
 		dialog.setTitle("О программе");
 		ImageView image = (ImageView) dialog.findViewById(R.id.gurman);
@@ -94,117 +100,107 @@ public class MainActivity extends SherlockFragmentActivity implements ExceptionC
 		TextView text = (TextView) dialog.findViewById(R.id.text);
 		text.setText(" Каталог продукции компании \"Сибирский Гурман\" \n\n Версия 1.4 \n\n Создано "
 				+ "компанией \"Секвения\" ");
-		
+
 		dialog.show();
 		return false;
- }
- 
-  public static class TabsAdapter extends FragmentPagerAdapter implements
- 		ActionBar.TabListener, ViewPager.OnPageChangeListener
- 	{
- 		private final Context mContext;
- 		private final ActionBar mActionBar;
- 		private final ViewPager mViewPager;
- 		private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>();
+	}
 
- 		static final class TabInfo
- 		{
- 			private final Class<?> clss;
- 			private final Bundle args;
+	public static class TabsAdapter extends FragmentPagerAdapter implements
+			ActionBar.TabListener, ViewPager.OnPageChangeListener {
+		private final Context mContext;
+		private final ActionBar mActionBar;
+		private final ViewPager mViewPager;
+		private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>();
 
- 			TabInfo(Class<?> _class, Bundle _args)
- 			{
- 				clss = _class;
- 				args = _args;
- 			}
- }
+		static final class TabInfo {
+			private final Class<?> clss;
+			private final Bundle args;
 
-  public TabsAdapter(SherlockFragmentActivity activity, ViewPager pager)
-  {
-   super(activity.getSupportFragmentManager());
-   mContext = activity;
-   mActionBar = activity.getSupportActionBar();
-   mViewPager = pager;
-   mViewPager.setAdapter(this);
-   mViewPager.setOnPageChangeListener(this);
-  }
+			TabInfo(Class<?> _class, Bundle _args) {
+				clss = _class;
+				args = _args;
+			}
+		}
 
-  public void addTab(ActionBar.Tab tab, Class<?> clss, Bundle args)
-  {
-   TabInfo info = new TabInfo(clss, args);
-   tab.setTag(info);
-   tab.setTabListener(this);
-   mTabs.add(info);
-   mActionBar.addTab(tab);
-   notifyDataSetChanged();
-  }
+		public TabsAdapter(SherlockFragmentActivity activity, ViewPager pager) {
+			super(activity.getSupportFragmentManager());
+			mContext = activity;
+			mActionBar = activity.getSupportActionBar();
+			mViewPager = pager;
+			mViewPager.setAdapter(this);
+			mViewPager.setOnPageChangeListener(this);
+		}
 
-  @Override
-  public int getCount()
-  {
-   return mTabs.size();
-  }
+		public void addTab(ActionBar.Tab tab, Class<?> clss, Bundle args) {
+			TabInfo info = new TabInfo(clss, args);
+			tab.setTag(info);
+			tab.setTabListener(this);
+			mTabs.add(info);
+			mActionBar.addTab(tab);
+			notifyDataSetChanged();
+		}
 
-  @Override
-  public Fragment getItem(int position)
-  {
-   TabInfo info = mTabs.get(position); 
-   return Fragment.instantiate(mContext, info.clss.getName(),
-     info.args);
-  }
+		@Override
+		public int getCount() {
+			return mTabs.size();
+		}
 
-  public void onPageScrolled(int position, float positionOffset,
-    int positionOffsetPixels)
-  {
-  }
+		@Override
+		public Fragment getItem(int position) {
+			TabInfo info = mTabs.get(position);
+			Fragment curFragment = Fragment.instantiate(mContext, info.clss.getName());
+			curFragment.setRetainInstance(true);
+			curFragment.setArguments(info.args);
+			return curFragment;
+		}
 
-  public void onPageSelected(int position)
-  {
-	 
-	  mActionBar.setSelectedNavigationItem(position);
-  }
+		public void onPageScrolled(int position, float positionOffset,
+				int positionOffsetPixels) {
+		}
 
-  public void onPageScrollStateChanged(int state)
-  {
-  }
+		public void onPageSelected(int position) {
 
-  public void onTabSelected(Tab tab, FragmentTransaction ft)
-  {
-  if (ls != null)
-	   MainActivity.ls.setVisibility(View.VISIBLE);
-  if (lv != null)
-	  MainActivity.lv.setVisibility(View.INVISIBLE);
-  if (mainListView != null)
-	  MainActivity.mainListView.setVisibility(View.INVISIBLE);
-   Object tag = tab.getTag();
-   for (int i = 0; i < mTabs.size(); i++)
-   { 
-    if (mTabs.get(i) == tag)
-    {
-     mViewPager.setCurrentItem(i);
-    }
-   }
-  }
+			mActionBar.setSelectedNavigationItem(position);
+		}
 
-  public void onTabUnselected(Tab tab, FragmentTransaction ft)
-  {
-  }
+		public void onPageScrollStateChanged(int state) {
+		}
 
-  public void onTabReselected(Tab tab, FragmentTransaction ft)
-  {
-  }
- }
-  
-  public void onBackPressed() {
-	  super.onBackPressed();
-	  if (lv != null) MainActivity.lv.setVisibility(View.INVISIBLE);	
-	  if (ls != null) MainActivity.ls.setVisibility(View.VISIBLE);
-	  if (mainListView != null) MainActivity.mainListView.setVisibility(View.INVISIBLE);
-  	               
-  }
+		public void onTabSelected(Tab tab, FragmentTransaction ft) {
+			if (ls != null)
+				MainActivity.ls.setVisibility(View.VISIBLE);
+			if (lv != null)
+				MainActivity.lv.setVisibility(View.INVISIBLE);
+			if (mainListView != null)
+				MainActivity.mainListView.setVisibility(View.INVISIBLE);
+			Object tag = tab.getTag();
+			for (int i = 0; i < mTabs.size(); i++) {
+				if (mTabs.get(i) == tag) {
+					mViewPager.setCurrentItem(i);
+				}
+			}
+		}
 
-@Override
-public void lastBreath(Exception exeption) {
-	BugSenseHandler.sendException(exeption);
-}
+		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+		}
+
+		public void onTabReselected(Tab tab, FragmentTransaction ft) {
+		}
+	}
+
+	public void onBackPressed() {
+		super.onBackPressed();
+		if (lv != null)
+			MainActivity.lv.setVisibility(View.INVISIBLE);
+		if (ls != null)
+			MainActivity.ls.setVisibility(View.VISIBLE);
+		if (mainListView != null)
+			MainActivity.mainListView.setVisibility(View.INVISIBLE);
+
+	}
+
+	@Override
+	public void lastBreath(Exception exeption) {
+		BugSenseHandler.sendException(exeption);
+	}
 }

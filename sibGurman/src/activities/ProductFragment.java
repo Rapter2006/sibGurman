@@ -152,39 +152,8 @@ public class ProductFragment extends Activity {
 		LinearLayout layout2 = (LinearLayout) findViewById(R.id.lay2);
 		LinearLayout layout3 = (LinearLayout) findViewById(R.id.lay3);
 
-		switch (MainActivity.className) {
-		case 1: {
-			setProductFragment(AllProducts.pelmens
-					.get(MainActivity.pusitionItem));
-			break;
-		}
-		case 2: {
-			setProductFragment(AllProducts.fri.get(MainActivity.pusitionItem));
-			break;
-		}
-		case 3: {
-			setProductFragment(AllProducts.pancakes
-					.get(MainActivity.pusitionItem));
-			break;
-		}
-		case 4: {
-			setProductFragment(AllProducts.dough.get(MainActivity.pusitionItem));
-			break;
-		}
-		case 5: {
-			setProductFragment(AllProducts.soups.get(MainActivity.pusitionItem));
-			break;
-		}
-		case 6: {
-			setProductFragment(AllProducts.chops.get(MainActivity.pusitionItem));
-			break;
-		}
-		case 7: {
-			setProductFragment(AllProducts.dumplings
-					.get(MainActivity.pusitionItem));
-			break;
-		}
-		}
+		setProductFragment(AllProducts.allProducts.get(MainActivity.className).brands
+				.get(MainActivity.pusitionItem));
 		LinearLayout layout;
 		for (int i = 0; i < list.size(); i++) {
 			layout = new LinearLayout(this);

@@ -19,43 +19,9 @@ public class ProductActivity extends SherlockFragmentActivity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().getDecorView().setBackgroundColor(Color.WHITE);
 		Product myProduct = null;
-		switch (MainActivity.className) {
-		case 1: {
-			myProduct = AllProducts.pelmens.get(Transporter.positionBrand)
-					.getProducts().get(Transporter.positionProduct);
-			break;
-		}
-		case 2:{
-			myProduct = AllProducts.fri.get(Transporter.positionBrand)
-					.getProducts().get(Transporter.positionProduct);
-			break;
-		}
-		case 3: {
-			myProduct = AllProducts.pancakes.get(Transporter.positionBrand)
-					.getProducts().get(Transporter.positionProduct);
-			break;
-		}
-		case 4: {
-			myProduct = AllProducts.dough.get(Transporter.positionBrand)
-					.getProducts().get(Transporter.positionProduct);
-			break;
-		}
-		case 5: {
-			myProduct = AllProducts.soups.get(Transporter.positionBrand)
-					.getProducts().get(Transporter.positionProduct);
-			break;
-		}
-		case 6: {
-			myProduct = AllProducts.chops.get(Transporter.positionBrand)
-					.getProducts().get(Transporter.positionProduct);
-			break;
-		}
-		case 7: {
-			myProduct = AllProducts.dumplings.get(Transporter.positionBrand)
-					.getProducts().get(Transporter.positionProduct);
-			break;
-		}
-		}
+		myProduct = AllProducts.allProducts.get(MainActivity.className).brands
+				.get(Transporter.positionBrand).getProducts()
+				.get(Transporter.positionProduct);
 		setContentView(R.layout.product);
 		if (myProduct != null) {
 			TextView textViewNameProduct = (TextView) findViewById(R.id.nameProduct);

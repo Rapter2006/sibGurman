@@ -19,7 +19,7 @@
 
     <TableRow
         android:id="@+id/tableRowMain"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_marginLeft="10px"
         android:layout_marginTop="10px"
@@ -36,7 +36,7 @@
         </ImageView>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="10px"
@@ -72,7 +72,7 @@
 
                 <TableRow
                     android:id="@+id/tableRow1"
-                    android:layout_width="match_parent"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:weightSum="3" >
@@ -110,7 +110,7 @@
 
                 <TableRow
                     android:id="@+id/tableRow2"
-                    android:layout_width="match_parent"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3" >
 
