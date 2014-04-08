@@ -95,7 +95,12 @@ public class AllProducts {
 			List<Package> packages = getPackagesFromJSONArray(jsonPackages);
 			Product product = new Product(productName, desc, storage,
 					pictureId, packages);
-
+			try {
+				String brandListName = jsonProduct.getString("list_brand_name");
+				product.setNameForProductList(brandListName);
+			} catch (Exception exception) {
+				System.out.println("Brand list name undefined");
+			}
 			try {
 				String brandListPictureName = jsonProduct
 						.getString("image_brandlist");
